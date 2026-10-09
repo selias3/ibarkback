@@ -1,0 +1,525 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>calvin's reading list</title>
+
+<style>
+/* Page spacing */
+body {
+  margin: 0px;
+  font-family: 'Courier New', Courier, monospace;
+} 
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+  
+.header {
+  background-color: #0039a3;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+
+.header a {
+  text-decoration: none;
+  color: white;
+} 
+
+.section-title {
+	text-align: left;
+	font-size: 20px;
+	font-style: bold;
+} 
+
+/* list components*/
+ul > li { 
+	list-style-type: none;
+	font-style: bold;
+} 
+
+ol,li { 
+	list-style-type:numbered;
+} 
+
+.author-list { 
+	margin: 5px;
+} 
+
+/* text attributes*/
+.play { 
+	color: hotpink;
+}
+
+.nonfic { 
+	color: purple;
+}
+
+.poetry { 
+	color: rgb(192, 98, 10);
+} 
+
+.read {	
+	color: green;
+} 
+
+.retro-star {
+    color: #CFB53B;
+    font-size: 15px;
+    text-shadow: 1px 1px 2px #aaa; 
+}
+
+.subtext { 
+	font-size: 10px;
+	font-style: italic;
+	margin-bottom: 5px;
+
+} 
+
+/* links */
+a { 
+	text-decoration: none;
+} 
+	
+.list a { 
+	color:rgb(53, 53, 53)
+} 
+	
+.list a:visited { 
+	color:grey;
+} 
+
+li > a:visited { 
+	color:blue 
+} 
+
+/* table attributes*/
+td {
+  vertical-align: top;
+}
+
+table { 
+	width: auto;
+} 
+
+.container {
+	display: flex;
+	gap: 20px;
+}
+
+.author, .works {
+	flex: 1;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+/* lists*/
+
+ul {
+	margin-bottom: 10px;
+}
+</style>
+</head>
+
+<body style="background-color:#C9DCFF;">
+
+<div class="header">
+  <span><a href="index.html">calvin's reading list</a></span>
+  <span><a href="to-read.html">to-read</a></span>
+  <span><a href="collection.html">collection</a></span>
+  <span><a href="bookmarks.html">bookmarks!</a></span>
+  <span><a href="2025.html">2025</a></span>
+</div>
+
+<div class="container">
+	<div class="author">
+		<div style="font-size: 20px;"><b>Authors (by surname)</b></div>
+		<div class="subtext">If just an authors name is listed, it indicates a general interest in their work; I don't have a interest in a specific work of theirs. If there is a list of works under their name, it indicates specific works they have written I have an interest in.</div>
+		<div class="subtext">Works I have read are listed in <span class="read">green</span>.<br> Fiction works are listed in black.<br>Non-ficition works are listed in <span class="nonfic">purple</span>.<br>Individual poems are listed in "quotations" and poetry collections are listed in <span class="poetry">orange</span>.<br>Plays are written in <span class="play">hot pink</span>.</div>
+				
+				<ul>
+					<li style="font-size: 20px;"><a href="https://en.wikipedia.org/wiki/Conrad_Aiken">Aiken, Conrad</a></li>
+				</ul> 
+
+				<ul>
+					<li style="font-size: 20px"><a href="https://en.wikipedia.org/wiki/Samuel_Beckett">Beckett, Samuel</a></li>
+						<ol> 
+							<li><u>Murphy</u> (1938)</li>
+							<li><u>Malone Dies</u> (1951)</li>
+							<li class="play"><u>Waiting for Godot</u> (1952)</li>
+							<li class="play"><u>Happy Days</u> (1961)</li>
+						</ol>
+				</ul>
+
+				<ul>
+					<li style="font-size: 20px"><a href="https://en.wikipedia.org/wiki/Richard_Brautigan ">Brautigan, Richard</a></li>
+						
+				</ul>
+
+				<ul>
+					<li style="font-size: 20px"><a href="https://en.wikipedia.org/wiki/Roberto_Bola%C3%B1o">Bolano, Roberto</a></li>
+						<ol> 
+							<li><u>2666</u> (2004)</li>
+						</ol>
+				</ul>
+				
+				<ul>
+					<li style="font-size: 20px"><a href="https://en.wikipedia.org/wiki/Charles_Bukowski">Bukowski, Charles</a></li>
+						<ol> 
+							<li><u>Factotum</u> (1975)</li>
+						</ol>
+				</ul>
+
+				<ul>
+					<li style="font-size: 20px"><a href="https://en.wikipedia.org/wiki/Michel_Butor">Butor, Michel</a></li>
+				</ul> 
+				
+				<ul>
+					<li style="font-size: 20px"><a href="https://en.wikipedia.org/wiki/Hart_Crane">Crane, Hart</a></li>
+						<ol> 
+							<li class="poetry"><u>White Buildings</u> (1926)</li>
+							<li class="poetry"><u>The Bridge</u> (1930)</li>
+						</ol>
+				</ul>
+				
+				<ul>
+					<li style="font-size: 20px"><a href="https://en.wikipedia.org/wiki/Emily_Dickinson">Dickinson, Emily</a></li>
+				</ul>
+
+				<ul>
+					<li style="font-size: 20px"><a href="https://en.wikipedia.org/wiki/T._S._Eliot">Eliot, T.S.</a></li>
+						<ol>
+							<li class="poetry"><u>Prufrock and Other Observations</u> (1917)</li>
+							<li class="poetry"><u>Poems</u> (1920)</li>
+							<li class="read"><u>The Waste Land</u> (1922)</li>
+							<li>"The Hollow Men" (1925)</li>
+							<li class="play"><u>Murder in the Cathedral</u> (1935)</li>
+							<li>"Four Quartets" (1943)</li>
+						</ol>
+				</ul>
+
+				<ul>
+					<li style="font-size: 20px"><a href="https://en.wikipedia.org/wiki/Nuruddin_Farah">Farah, Nuruddin</a></li>
+						<ol>
+							<li><u>From a Crooked Rib</u>(1970)</li>
+						</ol>
+				</ul> 
+				
+				<ul>
+					<li style="font-size: 20px"><a href="https://en.wikipedia.org/wiki/William_Faulkner">Faulkner, William</a></li>
+						<ol>
+							<li><u>Soldiers' Pay</u> (1926)</li>
+							<li class="read"><u>Sartoris</u> (1929)</li>
+							<li class="read"><u>The Sound and the Fury</u> (1929)</li>
+							<li class="read"><u>As I Lay Dying</u> (1930)</li>
+							<li><u>Sanctuary</u> (1931)</li>
+							<li class="read"><u>A Light in August</u> (1932)<span class="retro-star"><a href="favorites.html">&#9733;</a></span></li>
+							<li class="read"><u>Absalom, Absalom!</u> (1936)<span class="retro-star"><a href="favorites.html">&#9733;</a></span></li>
+							<li><u>The Unvanquished</u> (1938)</li>
+							<li><u>The Hamlet</u> (1940)</li>
+							<li><u>Go Down, Moses</u> (1942)</li>
+							<li><u>A Fable</u> (1954)</li>
+							<li><u>The Reivers</u>(1962)</li> 
+						</ol>
+				</ul>
+
+				<ul>
+					<li style="font-size: 20px"><a href="https://en.wikipedia.org/wiki/Federico_Garc%C3%ADa_Lorca">Garcia Lorca, Federico</a></li>
+				</ul>
+
+				<ul>
+					<li style="font-size: 20px"><a href="https://en.wikipedia.org/wiki/Gabriel_Garc%C3%ADa_M%C3%A1rquez">Garcia Marquez, Gabriel</a></li>
+						<ol>
+							<li><u>One Hundred Years of Solitude</u>(1967)</li>
+							<li><u>Love in the Time of Cholera</u>(1985)</li>
+						</ol>
+				</ul> 
+
+				<ul>
+					<li style="font-size: 20px"><a href="https://en.wikipedia.org/wiki/Abdulrazak_Gurnah">Gurnah, Abdulrazak</a></li>
+						<ol>
+							<li><u>Paradise</u>(1994)</li>
+							<li><u>By the Sea</u>(2001)</li>
+							<li><u>Desertion</u>(2005)</li>
+						</ol>
+				</ul>
+
+				<!--ul>
+					<li style="font-size: 20px"><a href="https://en.wikipedia.org/wiki/Knut_Hamsun">Hamsun, Knut</a></li>
+						<ol>
+							<li><u>Hunger</u> (1890)</li>
+							<li><u>Pan</u> (1894)</li>
+							<li><u>Growth of the Soil</u> (1917)</li>
+							<li><u>August Trilogy</u> (1927-1933)</li>
+								<ol> 
+									<li><u>Wayfarers</u> (1927)</li> 
+									<li><u>August</u>(1930)</li> 
+									<li><u>The Road Leads On</u> (1933) </li>
+								</ol>
+						</ol>
+				</ul-->
+				
+				<ul>
+					<li style="font-size: 20px"><a href="https://en.wikipedia.org/wiki/Ernest_Hemmingway">Hemmingway, Ernest</a></li>
+						<ol>
+							<li><u>The Sun Also Rises</u> (1926)</li>
+							<li><u>A Farewell to Arms</u> (1929)</li>
+							<li><u>For Whom the Bell Tolls</u> (1940)</li>
+							<li class="read"><u>The Old Man and the Sea</u> (1952)<span class="retro-star"><a href="favorites.html">&#9733;</a></span></li>
+						</ol>
+				</ul>
+
+				<ul>
+					<li style="font-size: 20px"><a href="https://en.wikipedia.org/wiki/C._L._R._James">James, C.L.R.</a></li>
+						<ol>
+							<li><u>Minty Alley</u> (1936)</li>
+							<li class="read"><u>The Black Jacobins</u> (1938)<span class="subtext">reread !</span></li>
+							<li class="nonfic"><u>Beyond the Boundary</u> (1963)</li>
+						</ol>
+				</ul>
+
+				<ul>
+					<li style="font-size: 20px"><a href="https://en.wikipedia.org/wiki/James_Joyce">Joyce, James</a></li>
+						<ol>
+							<li class="poetry"><u>Chamber Music</u> (1907)</li>
+							<li class="read"><u>Dubliners</u> (1914)</li>
+							<li ><u>A Portrait of the Artist as a Young Man</u> (1917)</li>
+							<li ><u>Ulysses</u> (1922)</li>
+							<li ><u>Fineganns Wake</u> (1924)</li>
+						</ol>
+				</ul>
+
+				<ul>
+					<li style="font-size: 20px"><a href="https://en.wikipedia.org/wiki/Franz_Kafka">Kafka, Franz</a></li>
+						<ol>
+							<li><u>The Metamorphosis</u> (1915)</li>
+							<li><u>The Trial</u> (1925)</li>
+							<li><u>The Castle</u> (1926)</li>
+							<li><u>Amerika</u> (1927)</li>
+						</ol>
+				</ul>
+
+				<ul>
+					<li style="font-size: 20px"><a href="https://en.wikipedia.org/wiki/László_Krasznahorkai">Krasznahorkai, László</a></li>
+				</ul>
+
+				<ul>
+					<li style="font-size: 20px"><a href="https://en.wikipedia.org/wiki/Marshall_McLuhan">McLuhan, Marshall</a></li>
+						<ol>
+							<li class="nonfic"><u>The Gutenberg Galaxy: The Making of Typographic Man</u> (1962)</li>
+							<li class="nonfic"><u>The Medium is the Massage</u> (1967)</li>
+						</ol>
+				</ul>
+
+				<ul>
+					<li style="font-size: 20px"><a href="https://en.wikipedia.org/wiki/Marianne_Moore">Moore, Marianne</a></li>
+				</ul> 
+				
+				<ul>
+					<li style="font-size: 20px"><a href="https://en.wikipedia.org/wiki/Toni_Morrison">Morrison, Toni</a></li>
+						<ol>
+							<li class="read"><u>The Bluest Eye</u> (1970)</li>
+							<li><u>Sula</u> (1973)</li>
+							<li class="read"><u>Song of Solomon</u> (1977)<span class="retro-star"><a href="favorites.html">&#9733;</a></span></li>
+							<li><u>Tar Baby</u> (1981)</li>
+							<li class="read"><u>Beloved</u> (1987)<span class="retro-star"><a href="favorites.html">&#9733;</a></span></li>
+							<li><u>Jazz</u> (1992)</li>
+						</ol>
+				</ul>
+
+				<ul>
+					<li style="font-size: 20px"><a href="https://en.wikipedia.org/wiki/Anaïs_Nin">Nin, Anaïs</a></li>
+				</ul>
+				
+				<ul>
+					<li style="font-size: 20px"><a href="https://en.wikipedia.org/wiki/Hiroko_Oyamada">Oyamada, Hiroko</a></li>
+						<ol>
+							<li><u>The Factory</u> (2019)</li>
+							<li class="read"><u>The Hole</u> (2020)</li>
+							<li><u>Garden</u> (2026)</li>
+						</ol>
+				</ul>
+
+				<ul>
+					<li style="font-size: 20px"><a href="https://en.wikipedia.org/wiki/Francis_Ponge">Ponge, Francis</a></li>
+				</ul>
+				
+				<ul>
+					<li style="font-size: 20px"><a href="https://en.wikipedia.org/wiki/Marcel_Proust">Proust, Marcel</a></li>
+						<ol> 
+							<li><u>Pleasures and Days (Les Plaisirs et les jours)</u>(1896)<span class="subtext"> lire en français !</span></li>
+							<li><u>In Search of Lost Time (À la recherche du temps perdu)</u> (1913-1927)</li>
+								<ol> 
+									<li><u>Swann's Way (Du côté de chez Swann)</u> (1913)</li> 
+									<li><u>In the Shadow of Young Girls in Flower  (À l'ombre des jeunes filles en fleurs)</u>(1919)</li> 
+									<li><u>The Guermantes Way (Le Côté de Guermantes)</u> (1920-1921) </li>
+									<li><u>Sodom and Gomorrah (Sodome et Gomorrhe)</u> (1921-1922)</li>
+									<li><u>The Prisoner (La Prisonnière)</u> (1923)</li>
+									<li><u>The Fugitive (Albertine disparue)</u> (1925)</li>
+									<li><u>Time Regained (Le Temps retrouvé)</u> (1927)</li>
+						</ol>
+				</ul> 
+				
+				<ul>
+					<li style="font-size: 20px"><a href="https://en.wikipedia.org/wiki/Thomas_Pynchon">Pynchon, Thomas</a></li>
+						<ol> 
+							<li><u>V.</u> (1963)</li>
+							<li><u>The Crying of Lot 49</u> (1966)</li>
+							<li class="read"><u>Gravity's Rainbow</u> (1973)<span class="retro-star"><a href="favorites.html">&#9733;</a></span></li>
+							<li><u>Vineland</u> (1990)</li>
+							<li><u>Mason & Dixon</u> (1997)</li>
+							<li><u>Inherent Vice</u> (2009)</li>
+							<li><u>Bleeding Edge</u> (2013)</li>
+						</ol>
+				</ul> 
+				
+				<ul>
+					<li style="font-size: 20px"><a href="https://en.wikipedia.org/wiki/Dorothy_Richardson">Richardson, Dorothy</a></li>
+						<ol> 
+							<li><u>Pilgrimage</u> (1915-1968)</li>
+								<ol> 
+									<li><u>Pointed Roofs</u> (1915)</li> 
+									<li><u>Backwater</u>(1916)</li> 
+									<li><u>Honeycomb</u> (1917) </li>
+									<li><u>The Tunnel</u> (1919)</li>
+									<li><u>Interim</u> (1920)</li>
+									<li><u>Deadlock</u> (1921)</li>
+									<li><u>Revolving Lights</u> (1923)</li>
+									<li><u>The Trap</u> (1925)</li>
+									<li><u>Oberland</u> (1927)</li>
+									<li><u>Dawn's Left Hand</u> (1931)</li>
+									<li><u>Clear Horizon</u> (1935)</li>
+									<li><u>Dimple Hill</u> (1938)</li>
+									<li><u>March Moonlight</u> (1967)</li>
+								</ol>
+						</ol>
+				</ul>
+
+				<ul>
+					<li style="font-size: 20px"><a href="https://en.wikipedia.org/wiki/Alain_Robbe-Grillet">Robbe-Grillet, Alain</a></li>
+						<ol> 
+							<li><u>The Erasers (Les Gommes)</u> (1953)</li>
+							<li><u>Jealousy (La Jalousie)</u> (1957)</li>
+						</ol>
+				</ul>
+				
+				<ul>
+					<li style="font-size: 20px"><a href="https://en.wikipedia.org/wiki/Claude_Simon">Simon, Claude</a></li>
+				</ul> 
+				
+				<ul>
+					<li style="font-size: 20px"><a href="https://en.wikipedia.org/wiki/Susan_Sontag">Sontag, Susan</a></li>
+				</ul>
+				
+				<ul>
+					<li style="font-size: 20px"><a href="https://en.wikipedia.org/wiki/Allen_Tate">Tate, Allen</a></li>
+						<ol>
+							<li>"Ode to the Confederate Dead" (1928)</li>
+							<li>"The Mediterranean" (1933)</li>
+							<li><u>The Fathers</u>(1938)</li>
+						</ol>
+				</ul>
+
+				<ul>
+					<li style="font-size: 20px"><a href="https://en.wikipedia.org/wiki/Tengour, Habib">Tengour, Habib</a></li>
+				</ul> 
+
+				<ul>
+					<li style="font-size: 20px"><a href="https://en.wikipedia.org/wiki/Paul_Valéry">Valéry, Paul</a></li>
+				</ul>
+
+				<ul>
+					<li style="font-size: 20px"><a href="https://en.wikipedia.org/wiki/William_T._Vollmann">Vollmann, William T.</a></li>
+						<ol> 
+							<li><u>Rainbow Stories</u> (1989)</li>
+							<li><u>Europe Central</u> (2005)</li>
+						</ol>
+				</ul>
+
+				<ul>
+					<li style="font-size: 20px"><a href="https://en.wikipedia.org/wiki/Oscar_Wilde">Wilde, Oscar</a></li>
+				</ul> 
+				
+				<ul>
+					<li style="font-size: 20px"><a href="https://en.wikipedia.org/wiki/William_Carlos_Williams">Williams, William Carlos</a></li>
+						<ol> 
+							<li class="read"><u>Spring and All</u> (1923)<span class="retro-star"><a href="favorites.html">&#9733;</a></span></li>
+							<li class="poetry"><u>Paterson</u> (1946-1958)</li>
+							<li class="poetry"><u>Pictures from Brueghel and other poems</u> (1962)</li>
+						</ol>
+				</ul>
+				
+				<ul>
+					<li style="font-size: 20px"><a href="https://en.wikipedia.org/wiki/Thomas_Wolfe">Wolfe, Thomas</a></li>
+						<ol> 
+							<li><u>Look Homeward, Angel</u> (1929)</li>
+						</ol>
+				</ul>
+
+				<ul>
+					<li style="font-size: 20px"><a href="https://en.wikipedia.org/wiki/Virginia_Woolf">Woolf, Virginia</a></li>
+						<ol> 
+							<li><u>Jacob's Room</u> (1922)</li>
+							<li><u>Mrs. Dalloway</u> (1925)</li>
+							<li class="read"><u>To the Lighthouse</u> (1927)<span class="retro-star"><a href="favorites.html">&#9733;</a></span></li>
+							<li><u>Orlando</u> (1928)</li>
+							<li class="read"><u>A Room of One's Own</u> (1929)</li>
+							<li><u>The Waves</u> (1931)</li>
+							<li><u>Three Guineas</u> (1938)</li>
+						</ol>
+				</ul>
+
+				<ul>
+					<li style="font-size: 20px"><a href="https://en.wikipedia.org/wiki/Can_Xue">Xue, Can</a></li>
+				</ul>
+	</div>
+			
+			<div class="works">
+				<div style="font-size: 20px;"><b>One-off books and assorted works</b></div>
+				<div class="subtext">This lists singular works I am interested in reading, without a particular interest in the author or their other works.</div>
+				<ul>
+					<li style="font-size: 20px;">Fiction</li>
+						<ol>
+							<li><u>The Prague Cemetery</u> (2012) by Umberto Eco</li>
+							<li><u>Lolita</u> (1955) by Vladimir Nabokov</li>
+							<li><u>A Clockwork Orange</u> (1962) by Anthony Burgess</li>
+						</ol>
+				</ul>
+
+					<ul>
+						<li style="font-size: 20px;">History and non-fiction</li>
+								<ol>
+									<li><u>Great Society Subway: A History of the Washington Metro</u> (2006) by Zachary Schrag</li>
+									<li><u>Braiding Sweetgrass: Indigenous Wisdom, Scientific Knowledge, and the Teaching of Plants</u>(2013) by Robin Wall Kimmerer</li>
+									<li><u>Landscape and Power</u> (1994) ed. W.J.T. Mitchell</li>
+									<li><u>Metahistory: The Historical Imagination in Ninteenth-Century Europe</u> (1973) by Hayden White</li>
+									<li><u>No Sense of Place: The Impact of Electronic Media on Social Behavior</u> (1986) by Joshua Meyrowitz</li>
+									<li><u>Centennial: The Great Fair of 1876 and the Invention of America's Future</u> (2026) by Fergus Bordewich</li>
+									<li><u>Matatu: a history of popular transportation in Nairobi</u> (2017) by Kenda Mutongi</li>
+									<li><u>Imperialism and Music</u> (2001) by Jeffrey Richards</li>
+								</ol>
+					</ul>
+
+					<!--li style="font-size: 20px;">Philosophy</li>
+						<ol>
+							<li><u>Great Society Subway: A History of the Washington Metro</u> (2006) by Zachary Schrag</li-->
+					
+					<ul>
+						<li style="font-size: 20px;">Poetry</li>
+							<ol>
+								<li><u>Paris: A Poem</u> (1920) by Hope Mirrlees</li>
+							</ol>
+					</ul>
+				
+			</div>
+		</div>
+
+			
+
+
+				
+

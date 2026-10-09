@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>calvin's reading list</title>
+
+  <style>
+    /* Page spacing */
+body {
+	margin: 0;
+  font-family: Courier New;
+} 
+
+.text { 
+	margin: 30px;
+} 
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+  
+.header {
+  background-color: #0039a3;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+
+.header a {
+  text-decoration: none;
+  color: white;
+} 
+
+/* page title */
+.book-title {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.book-title td,tr {
+    text-align: center;
+} 
+
+.section-title {
+	text-align: center;
+	margin: 10px;
+	font-size: 36px;
+} 
+/* table contents */ 
+    .table-container {
+      max-width: 1200px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    .controls {
+      margin-bottom: 15px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    input, select {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    thead {
+      background: #0039a3;
+      color: white;
+    }
+
+    th, td {
+      padding: 12px 15px;
+      border-bottom: 0px solid #ddd;
+      text-align: left;
+    }
+
+    th {
+      cursor: pointer;
+      user-select: none;
+      position: relative;
+    }
+
+    .sort-indicator {
+      margin-left: 6px;
+      font-size: 12px;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+
+<body style="background-color:#C9DCFF;">
+
+<div class="header">
+  <span><a href="index.html">calvin's reading list</a></span>
+  <span><a href="to-read.html">to-read</a></span>
+  <span><a href="collection.html">collection</a></span>
+  <span><a href="bookmarks.html">bookmarks!</a></span>
+  <span><a href="2025.html">2025</a></span>
+</div>
+<br>
+<div>
+	<table class="book-title">
+		<tr class="section-title">
+			<td><b>calvin's book collection</b></td>
+		</tr>
+	</table>
+</div>
+
+
+<div>
+  <div class="table-container">
+
+    <div class="controls">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search..."
+      />
+
+      <!--select id="departmentFilter">
+        <option value="">All</option>
+        <option value="Title">Title</option>
+        <option value="Author">Author</option>
+        <option value="Year published">Year published</option>
+		<option value="Genre">Genre</option>
+		<option value="Year read">Year read</option>
+		<option value="Place of purchase">Place of purchase</option>
+      </select-->
+    </div>
+
+    <table id="employeeTable">
+      <thead>
+        <tr>
+          <th data-column="Title">Title <span class="sort-indicator"></span></th>
+          <th data-column="Author">Author <span class="sort-indicator"></span></th>
+          <th data-column="Year published">Year published <span class="sort-indicator"></span></th>
+		      <th data-column="Genre">Genre <span class="sort-indicator"></span></th>
+          <th data-column="Year read">Year read <span class="sort-indicator"></span></th>
+		      <th data-column="Place of purchase">Place of purchase <span class="sort-indicator"></span></th>
+          <th data-column="Place of purchase">Date of purchase <span class="sort-indicator"></span></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td><a href=""><u>Amerika</u></td>
+          <td>Kafka, Franz</td>
+          <td>1927</td>
+		      <td>literary fiction</td>
+          <td>N/A</td>
+		      <td>McKays Mebane</td>
+          <td>October 2026</td>
+        </tr>
+        <tr>
+          <td><a href=""><u>The Inner Side of the Wind</u></td>
+          <td>Pavic, Milorad</td>
+          <td>1998</td>
+		      <td>literary fiction</td>
+          <td>N/A</td>
+		      <td>McKays Mebane</td>
+          <td>October 2026</td>
+        </tr>
+        <tr>
+          <td><a href=""><u>Cornhuskers</u></td>
+          <td>Sandburg, Carl</td>
+          <td>1918</td>
+		      <td>poetry</td>
+          <td>N/A</td>
+		      <td>McKays Mebane</td>
+          <td>October 2026</td>
+        </tr>
+        <tr>
+          <td><a href=""><u>The Elephant Man</u></td>
+          <td>Pomerance, Bernard</td>
+          <td>1979</td>
+		      <td>play</td>
+          <td>N/A</td>
+		      <td>Scrap Exchange Thrift</td>
+          <td>October 2026</td>
+        </tr>
+        <tr>
+          <td><a href=""><u>The Dialogue of Two Snails</u></td>
+          <td>Garcia Lorca, Federico</td>
+          <td>2018</td>
+		      <td>poetry</td>
+          <td>N/A</td>
+		      <td>Scrap Exchange Thrift</td>
+          <td>October 2026</td>
+        </tr>
+        <tr>
+          <td><a href=""><u>Mephisto</u></td>
+          <td>Mann, Klaus</td>
+          <td>1936</td>
+		      <td>literary fiction</td>
+          <td>N/A</td>
+		      <td>Circle City Books</td>
+          <td>September 2026</td>
+        </tr>
+        <tr>
+          <td><a href=""><u>The Abortion: An Historical Romance 1966</u></td>
+          <td>Braughtigan, Richard</td>
+          <td>1971</td>
+		      <td>literary fiction</td>
+          <td>N/A</td>
+		      <td>Circle City Books</td>
+          <td>September 2026</td>
+        </tr>
+        <tr>
+          <td><a href=""><u>The Trial</u></td>
+          <td>Kafka, Franz</td>
+          <td>1925</td>
+		      <td>literary fiction</td>
+          <td>N/A</td>
+		      <td>McKays Mebane</td>
+          <td>September 2026</td>
+        </tr>
+        <tr>
+          <td><a href="books/grapes.html"><u>The Grapes of Wrath</u></td>
+          <td>Steinbeck, John</td>
+          <td>1939</td>
+		      <td>literary fiction</td>
+          <td>N/A</td>
+		      <td>McKays Mebane</td>
+          <td>September 2026</td>
+        </tr>
+        <tr>
+          <td><a href=""><u>The Good Soldier</u></td>
+          <td>Ford, Ford Maddox</td>
+          <td>1915</td>
+		      <td>literary fiction</td>
+          <td>N/A</td>
+		      <td>McKays Mebane</td>
+          <td>September 2026</td>
+        </tr>
+        <tr>
+          <td><a href=""><u>Ethan Frome</u></td>
+          <td>Wharton, Edith</td>
+          <td>1911</td>
+		      <td>literary fiction</td>
+          <td>N/A</td>
+		      <td>McKays Mebane</td>
+          <td>September 2026</td>
+        </tr>
+        <tr>
+          <td><a href=""><u>V.</u></td>
+          <td>Pynchon, Thomas</td>
+          <td>1963</td>
+		      <td>literary fiction</td>
+          <td>N/A</td>
+		      <td>McKays Mebane</td>
+          <td>September 2026</td>
+        </tr>
+        <tr>
+          <td><a href=""><u>Vineland</u></td>
+          <td>Pynchon, Thomas</td>
+          <td>1990</td>
+		      <td>literary fiction</td>
+          <td>N/A</td>
+		      <td>Bookmans Tucson</td>
+          <td>September 2026</td>
+        </tr>
+        <tr>
+          <td><a href="books/lonelyhearts.html"><u>Miss Lonelyhearts & The Day of the Locust</u></td>
+          <td>West, Nathaniel</td>
+          <td>1933 & 1939</td>
+		      <td>literary fiction</td>
+          <td>N/A</td>
+		      <td>Bookmans Tucson</td>
+          <td>September 2026</td>
+        </tr>
+        <tr>
+          <td><a href=""><u>Jealousy & In the Labyrinth</u></td>
+          <td>Robbe-Grillet, Alain</td>
+          <td>1957 & 1959</td>
+		      <td>literary fiction</td>
+          <td>N/A</td>
+		      <td>Bookmans Tucson</td>
+          <td>September 2026</td>
+        </tr>
+        <tr>
+          <td><a href=""><u>The Reivers</u></td>
+          <td>Faulkner, William</td>
+          <td>1962</td>
+		      <td>literary fiction</td>
+          <td>N/A</td>
+		      <td>McKays Mebane</td>
+          <td>August 2026</td>
+        </tr>
+        <tr>
+          <td><a href=""><u>The Palm at the End of the Mind</u></td>
+          <td>Stevens, Wallace</td>
+          <td>1972</td>
+		      <td>poetry</td>
+          <td>N/A</td>
+		      <td>McKays Mebane</td>
+          <td>August 2026</td>
+        </tr>
+        <tr>
+          <td><a href=""><u>Look Homeward, Angel</u></td>
+          <td>Wolfe, Thomas</td>
+          <td>1929</td>
+		      <td>literary fiction</td>
+          <td>N/A</td>
+		      <td>CHPL Book Sale</td>
+          <td>August 2026</td>
+        </tr>
+        <tr>
+          <td><a href=""><u>On the Golden Porch</u></td>
+          <td>Tolstaya, Tatyana</td>
+          <td>1987</td>
+		      <td>literary fiction</td>
+          <td>N/A</td>
+		      <td>CHPL Book Sale</td>
+          <td>August 2026</td>
+        </tr>
+        <tr>
+          <td><a href=""><u>L'Assommoir</u></td>
+          <td>Zola, Emile</td>
+          <td>1877</td>
+		      <td>literary fiction</td>
+          <td>N/A</td>
+		      <td>CHPL Book Sale</td>
+          <td>August 2026</td>
+        </tr>
+        <tr>
+          <td><a href=""><u>The Subterraneans</u></td>
+          <td>Kerouac, Jack</td>
+          <td>1958</td>
+		      <td>literary fiction</td>
+          <td>N/A</td>
+		      <td>CHPL Book Sale</td>
+          <td>August 2026</td>
+        </tr>
+        <tr>
+          <td><a href=""><u>The Dharma Bums</u></td>
+          <td>Kerouac, Jack</td>
+          <td>1958</td>
+		      <td>literary fiction</td>
+          <td>N/A</td>
+		      <td>CHPL Book Sale</td>
+          <td>August 2026</td>
+        </tr>
+        <tr>
+          <td><a href="books/Road.html"><u>On the Road</u></td>
+          <td>Kerouac, Jack</td>
+          <td>1957</td>
+		      <td>literary fiction</td>
+          <td>September 2026</td>
+		      <td>CHPL Book Sale</td>
+          <td>August 2026</td>
+        </tr>
+        <tr>
+          <td><a href=""><u>Tar Baby</u></td>
+          <td>Morrison, Toni</td>
+          <td>1981</td>
+		      <td>literary fiction</td>
+          <td>N/A</td>
+		      <td>CHPL Book Sale</td>
+          <td>August 2026</td>
+        </tr>
+        <tr>
+            <td><a href=""><u>Paterson</u></td>
+            <td>Williams, William Carlos</td>
+            <td>1946-1958</td>
+            <td>poetry</td>
+            <td>N/A</td>
+            <td>CHPL Book Sale</td>
+            <td>August 2026</td>
+          </tr>
+          <tr>
+            <td><a href=""><u>Selected Poems</u></td>
+            <td>Pound, Ezra</td>
+            <td>1957</td>
+            <td>poetry</td>
+            <td>N/A</td>
+            <td>CHPL Book Sale</td>
+            <td>August 2026</td>
+          </tr>
+          <tr>
+            <td><a href=""><u>Capital</u></td>
+            <td>Marx, Karl</td>
+            <td>1867</td>
+            <td>non fiction</td>
+            <td>N/A</td>
+            <td>McKays Mebane</td>
+            <td>August 2026</td>
+          </tr>
+          <tr>
+            <td><a href=""><u>The Idiot</u></td>
+            <td>Dostoyevsky, Fyodor</td>
+            <td>1869</td>
+            <td>literary fiction</td>
+            <td>N/A</td>
+            <td>McKays Mebane</td>
+            <td>August 2026</td>
+          </tr>
+         <tr>
+          <td><a href=""><u>Trout Fishing in America</u></td>
+          <td>Braughtigan, Richard</td>
+          <td>1967</td>
+		      <td>literary fiction/novella</td>
+          <td>N/A</td>
+		      <td>gifted (ben)</td>
+          <td>August 2026</td>
+        </tr>
+         <tr>
+          <td><a href=""><u>The Bluest Eye</u></td>
+          <td>Morrison, Toni</td>
+          <td>1970</td>
+		      <td>literary fiction</td>
+          <td>August 2026</td>
+		      <td>Powells Portland</td>
+          <td>May 2025</td>
+        </tr>
+         <tr>
+          <td><a href=""><u>The Day of the Oprichnik</u></td>
+          <td>Sorokin, Vladimir</td>
+          <td>2006</td>
+		      <td>literary fiction</td>
+          <td>N/A</td>
+		      <td>GSLL</td>
+          <td>August 2026</td>
+        </tr>
+        <tr>
+          <td><a href=""><u>Red Cavalry and Other Stories</u></td>
+          <td>Babel, Isaac</td>
+          <td>1927</td>
+		      <td>short stories</td>
+          <td>N/A</td>
+		      <td>GSLL</td>
+          <td>August 2026</td>
+        </tr>
+        <tr>
+          <td><a href=""><u>The Souls of Black Folk</u></td>
+          <td>Du Bois, W.E.B.</td>
+          <td>1903</td>
+		      <td>essay</td>
+          <td>N/A</td>
+		      <td>GSLL</td>
+          <td>August 2026</td>
+        </tr>
+        <tr>
+          <td><a href=""><u>No Exit and three other plays</u></td>
+          <td>Sartre, Jean-Paul</td>
+          <td>1947 & 1949</td>
+		      <td>play</td>
+          <td>N/A</td>
+		      <td>GSLL</td>
+          <td>August 2026</td>
+        </tr>
+        <tr>
+          <td><a href=""><u>The Slynx</u></td>
+          <td>Tolstaya, Tatyana</td>
+          <td>2003</td>
+		      <td>literary fiction</td>
+          <td>N/A</td>
+		      <td>GSLL</td>
+          <td>August 2026</td>
+        </tr>
+        <tr>
+          <td><a href=""><u>Selected Readings from the Works of Mao Tsetung</u></td>
+          <td>Mao, Zedong (Tsetung)</td>
+          <td>1971</td>
+		      <td>philosophy</td>
+          <td>N/A</td>
+		      <td>Ebay</td>
+          <td>August 2026</td>
+        </tr>
+        <tr>
+          <td><a href=""><u>Search for a Method</u></td>
+          <td>Sartre, Jean-Paul</td>
+          <td>1963</td>
+		      <td>philosophy</td>
+          <td>N/A</td>
+		      <td>Circle City Books</td>
+          <td>August 2026</td>
+        </tr>
+        <tr>
+          <td><a href=""><u>Pylon</u></td>
+          <td>Faulkner, William</td>
+          <td>1935</td>
+		      <td>literary fiction</td>
+          <td>N/A</td>
+		      <td>Circle City Books</td>
+          <td>August 2026</td>
+        </tr>
+        <tr>
+          <td><a href=""><u>Mason & Dixon</u></td>
+          <td>Pynchon, Thomas</td>
+          <td>1997</td>
+		      <td>literary fiction</td>
+          <td>N/A</td>
+		      <td>Circle City Books</td>
+          <td>August 2026</td>
+        </tr>
+        <tr>
+          <td><a href=""><u>Voyage aux pays du coton</u></td>
+          <td>Orsenna, Erik</td>
+          <td>2006</td>
+		      <td>non-fiction</td>
+          <td>N/A</td>
+		      <td>Nice Price Books Raleigh</td>
+          <td>August 2026</td>
+        </tr>
+        <tr>
+          <td><a href=""><u>The Hole</u></td>
+          <td>Oyamada, Hiroko</td>
+          <td>2014</td>
+		      <td>literary fiction</td>
+          <td>August 2026</td>
+		      <td>Nice Price Books Raleigh</td>
+          <td>August 2026</td>
+        </tr>
+        <tr>
+          <td><a href=""><u>Lettres à un ami allemand</u></td>
+          <td>Camus, Albert</td>
+          <td>1948</td>
+		      <td>letters</td>
+          <td>N/A</td>
+		      <td>Readers Corner Raleigh</td>
+          <td>August 2026</td>
+        </tr>
+        <tr>
+          <td><a href=""><u>The Medium is the Massage</u></td>
+          <td>McLuhan, Marshall and Quentin Fiore</td>
+          <td>1967</td>
+		      <td>essay</td>
+          <td>N/A</td>
+		      <td>Letters Durham</td>
+          <td>July 2026</td>
+        </tr>
+        <tr>
+          <td><a href=""><u>The House of Spirits</u></td>
+          <td>Allende, Isabel</td>
+          <td>1985</td>
+		      <td>literary fiction</td>
+          <td>N/A</td>
+		      <td>ROMS</td>
+          <td>July 2026</td>
+        </tr>
+        <tr>
+          <td><a href=""><u>Swann's Way</u></td>
+          <td>Proust, Marcel</td>
+          <td>1913</td>
+		      <td>literary fiction</td>
+          <td>N/A</td>
+		      <td>ROMS</td>
+          <td>July 2026</td>
+        </tr>
+        <tr>
+          <td><a href=""><u>Waiting for Godot</u></td>
+          <td>Beckett, Samuel</td>
+          <td>1954</td>
+		      <td>play (tragicomedy)</td>
+          <td>N/A</td>
+		      <td>ROMS</td>
+          <td>July 2026</td>
+        </tr>
+        <tr>
+          <td><a href=""><u>The Song of Roland</u></td>
+          <td>Unknown</td>
+          <td>11th century BCE</td>
+		      <td>epic poem</td>
+          <td>N/A</td>
+		      <td>ROMS</td>
+          <td>July 2026</td>
+        </tr>
+        <tr>
+          <td><a href=""><u>What is Literature?</u></td>
+          <td>Sartre, Jean-Paul</td>
+          <td>1949</td>
+		      <td>philosophy</td>
+          <td>N/A</td>
+		      <td>ROMS</td>
+          <td>July 2026</td>
+        </tr>
+        <tr>
+          <td><a href=""><u>Breaking Free</u></td>
+          <td>Daniels, J</td>
+          <td>1989</td>
+		      <td>graphic novel</td>
+          <td>N/A</td>
+		      <td>gifted (dad)</td>
+          <td>December 2025</td>
+        </tr>
+        <tr>
+          <td><a href=""><u>Twenty Love Poems and a Song of Despair</u></td>
+          <td>Neruda, Pablo</td>
+          <td>1993</td>
+		      <td>poetry</td>
+          <td>N/A</td>
+		      <td>gifted (maizie)</td>
+          <td>February 2026</td>
+        </tr>
+        <tr>
+          <td><a href=""><u>Ice Trilogy</u></td>
+          <td>Sorokin, Vladimir</td>
+          <td>2008</td>
+		      <td>literary fiction</td>
+          <td>N/A</td>
+		      <td>McKays Mebane</td>
+          <td>July 2026</td>
+        </tr>
+        <tr>
+          <td><a href=""><u>Blue Lard</u></td>
+          <td>Sorokin, Vladimir</td>
+          <td>2000</td>
+		      <td>literary fiction</td>
+          <td>N/A</td>
+		      <td>McKays Mebane</td>
+          <td>July 2026</td>
+        </tr>
+        <tr>
+          <td><a href=""><u>Hard Rain Falling</u></td>
+          <td>Carpenter, Don</td>
+          <td>1964</td>
+		      <td>literary fiction</td>
+          <td>N/A</td>
+		      <td>McKays Mebane</td>
+          <td>July 2026</td>
+        </tr>
+        <tr>
+          <td><a href=""><u>Go Down, Moses</u></td>
+          <td>Faulkner, William</td>
+          <td>1940</td>
+		      <td>literary fiction</td>
+          <td>N/A</td>
+		      <td>McKays Mebane</td>
+          <td>July 2026</td>
+        </tr>
+        <tr>
+          <td><a href=""><u>The Secret History</u></td>
+          <td>Tartt, Donna</td>
+          <td>1992</td>
+		      <td>fiction</td>
+          <td>N/A</td>
+		      <td>McKays Mebane</td>
+          <td>July 2026</td>
+        </tr>
+        <tr>
+          <td><a href=""><u>The Price of Permanence: Nature and Business in the New South</u></td>
+          <td>Bryan, William D.</td>
+          <td>2018</td>
+		      <td>history</td>
+          <td>N/A</td>
+		      <td>CHPL book sale</td>
+          <td>UNK</td>
+        </tr>
+        <tr>
+          <td><a href=""><u>The Essential Rousseau</u></td>
+          <td>Rousseau, Jean-Jacques</td>
+          <td>1974</td>
+		      <td>philosophy</td>
+          <td>N/A</td>
+		      <td>CHPL book sale</td>
+          <td>Dec 2025</td>
+        </tr>
+         <tr>
+          <td><a href=""><u>Complete and Selected Prose of Hart Crane</u></td>
+          <td>Crane, Hart</td>
+          <td>1966</td>
+		      <td>poetry & prose</td>
+          <td>N/A</td>
+		      <td>Readers Corner Raleigh</td>
+          <td>May 2026</td>
+        </tr>
+        <tr>
+          <td><a href="books/sartoris.html"><u>Sartoris</u></td>
+          <td>Faulkner, William</td>
+          <td>1929</td>
+		      <td>literary fiction</td>
+          <td>2026</td>
+		      <td>McKays Mebane</td>
+          <td>UNK</td>
+        </tr>
+        <tr>
+          <td><a href="books/justes.html"><u>The Just Assassins (Les justes)</u></td>
+          <td>Camus, Albert</td>
+          <td>1949</td>
+		      <td>play</td>
+          <td>N/A</td>
+		      <td>ROMS</td>
+          <td>March 2026</td>
+        </tr>
+		    <tr>
+          <td><a href="books/justes.html"><u>Exile and the Kingdom (L'exil et le royaume)</u></td>
+          <td>Camus, Albert</td>
+          <td>1957</td>
+		      <td>short story collection</td>
+          <td>N/A</td>
+		      <td>ROMS</td>
+          <td>March 2026</td>
+        </tr>
+		    <tr>
+          <td><a href="books/brueghel.html"><u>Pictures from Brueghel</u></td>
+          <td>Williams, William Carlos</td>
+          <td>1962</td>
+		      <td>play</td>
+          <td>N/A</td>
+		      <td>Bookmans Tucson</td>
+          <td>April 2026</td>
+        </tr>
+        <tr>
+          <td><a href="books/rainbow.html"><u>Gravity's Rainbow</u></td>
+          <td>Pynchon, Thomas</td>
+          <td>1973</td>
+		      <td>literary fiction</td>
+          <td>August 2026</td>
+		      <td>Bookmans Tucson</td>
+          <td>April 2026</td>
+        </tr>
+        <tr>
+          <td><a href="books/odyssey.html"><u>The Odyssey</u></td>
+          <td>Homer</td>
+          <td>8th century BCE</td>
+		      <td>epic poem</td>
+          <td>2016, 2026</td>
+		      <td>CHPL book sale</td>
+          <td>UNK</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    const table = document.getElementById("employeeTable");
+    const tbody = table.querySelector("tbody");
+    const headers = table.querySelectorAll("th");
+
+    const searchInput = document.getElementById("searchInput");
+
+    let sortDirection = {};
+
+    // SORTING
+    headers.forEach((header, index) => {
+      header.addEventListener("click", () => {
+        const rows = Array.from(tbody.querySelectorAll("tr"));
+        const isAscending = !sortDirection[index];
+
+        rows.sort((a, b) => {
+          let aText = a.children[index].textContent.trim();
+          let bText = b.children[index].textContent.trim();
+
+          // Detect numbers
+          const aNum = parseFloat(aText);
+          const bNum = parseFloat(bText);
+
+          if (!isNaN(aNum) && !isNaN(bNum)) {
+            return isAscending ? aNum - bNum : bNum - aNum;
+          }
+
+          return isAscending
+            ? aText.localeCompare(bText)
+            : bText.localeCompare(aText);
+        });
+
+        // Update table
+        tbody.innerHTML = "";
+        rows.forEach(row => tbody.appendChild(row));
+
+        // Reset indicators
+        headers.forEach(h => {
+          h.querySelector(".sort-indicator").textContent = "";
+        });
+
+        // Set current indicator
+        header.querySelector(".sort-indicator").textContent =
+          isAscending ? "▲" : "▼";
+
+        sortDirection[index] = isAscending;
+      });
+    });
+
+    // FILTERING
+function filterTable() {
+  const searchText = searchInput.value.toLowerCase();
+  const rows = tbody.querySelectorAll("tr");
+
+  rows.forEach(row => {
+    const rowText = row.textContent.toLowerCase();
+    row.style.display = rowText.includes(searchText) ? "" : "none";
+  });
+}
+
+searchInput.addEventListener("input", filterTable);
+  </script>
+
+</body>
+</html>
+
