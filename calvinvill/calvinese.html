@@ -1,0 +1,921 @@
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<title>Calvinese language</title>
+
+<style>
+/* Page spacing */
+body {
+  margin: 30px;
+  font-family: Arial, sans-serif;
+} 
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+} 
+
+@font-face {
+  font-family: Calvinese; /* set name */
+  src: url(Calvinese4.woff); /* url of the font */
+}
+</style>
+</head>
+
+<!-- Header -->
+
+<h1 style="text-align:center;">
+  <a href="homepage.html">
+    <img src="images/emblem2.png" height="125" width="125" alt="Emblem">
+  </a>
+</h1>
+<h2 style="font-family:Georgia; background-color:#D1C4E9;">Calvinese language</h2>
+
+<body>
+<style>
+
+/* Page spacing */
+
+.main { 
+	margin-bottom: 10px;
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+} 
+
+.main p { 
+	margin: 10px;
+} 
+
+.subheader { 
+	font-size: 12px;
+	font-style: italic;
+	margin-left: 30px;
+} 
+
+/* Infobox */
+.toc {
+  width: 300px;
+  float: right;
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 20px;
+  border: 1px solid #ccc;
+  background: #ffffff;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.toc h1 {
+  background-color: #eee;
+  text-align: center;
+  font-size: 14px;
+  padding: 5px;
+} 
+.toc h2 {
+  background-color: #eee;
+  text-align: center;
+  font-size: 10px;
+  padding: 5px;
+  margin-top: 0px;
+} 
+
+.subcatergories { 
+	padding: 20px;
+	font-size: 12px;
+	margin-right: 20px;
+}
+  
+/* Figure styling */
+.history-figure { 
+  margin: 10px 0;
+}
+
+.history-figure img {
+  display: block;
+  max-width: 100%;
+	margin: 0 auto;
+}
+
+.history-figure figcaption {
+  font-size: 12px;
+  text-align: center;
+  margin-top: 5px;
+}
+
+/* in text images*/ 
+.history-figure-text { 
+	background-color: #ffffff;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+	margin: 10px;
+} 
+
+.history-figure-text img { 
+	display: block;
+	max-width: 100%;
+} 
+
+.history-figure-text figcaption { 
+	font-size: 12px;
+	font-family: Arial;
+	font-style: italic;
+	padding: 5px;
+} 
+	
+/* Accordion section */
+.section {
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.header {
+  background: #eee;
+  padding: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  padding-left: 5px;
+  font-size: 12px;
+}
+
+.content ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 5px 0;
+}
+
+textarea {
+            width: 50%;
+            height: 120px;
+            padding: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-top: 10px;
+        }
+
+        #output {
+            margin-top: 20px;
+            width: 50%;
+            background: #d8e2f1;
+            padding: 15px;
+            white-space: pre-wrap;
+            word-break: break-word;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+.wikitable {
+    border-collapse: collapse;
+    width: 50%;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    background: #fff;
+    color: #202122;
+    float: center;
+    margin: 20px;
+}
+
+.wikitable th,
+.wikitable td {
+    border: 1px solid #a2a9b1;
+    padding: 6px 10px;
+    text-align: left;
+}
+
+.wikitable th {
+    background-color: #eaecf0;
+    font-weight: bold;
+}
+
+.wikitable td:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.wikitable td:nth-child(odd) {
+    background-color: #fff;
+}
+
+.wikitable caption {
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 8px;
+}
+
+.textbox {
+  background-color: #d8e2f1;
+  padding: 5px;
+  font-family: 'Courier New', Courier, monospace;
+  width: 30%;
+}
+
+/* Converter */
+
+.converter-container {
+    display: flex;
+    gap: 40px;
+    margin: 20px 0;
+}
+
+.converter-panel {
+    width: 50%;
+}
+
+.converter-panel textarea {
+    width: 100%;
+    height: 120px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.calvinese-output {
+    margin-top: 10px;
+    width: 100%;
+    min-height: 120px;
+    background: #d8e2f1;
+    border: 1px solid #a2a9b1;
+    padding: 15px;
+    box-sizing: border-box;
+
+    font-family:Calvinese;
+    font-size:20px;
+    white-space:pre-wrap;
+    font-feature-settings:"liga" 1;
+    font-variant-ligatures:common-ligatures;
+    overflow: hidden;
+}
+</style>
+
+<!-- TOC -->
+<div class="main">
+	<div class="toc">
+	  <h1 style="background-color: #dbaf58;">Calvinese</h1>
+    <h2 style="background-color: #dbaf58;">siehelehinhitsi</h2>
+	  <div class="history-figure">
+      <img src="images/calvinese.jpg" alt="History image">
+      <figcaption>Picture of an early iteration of the Calvinese alphabet</figcaption>
+	</div>
+	<table class="subcatergories">
+		<tr>
+			<td><b>Native to</b></td>
+			<td><a href="Calvinvill.html">Calvinvill</a>, <a href="Khouza.html">Khouza</a></td>
+		</tr>
+		<tr>
+			<td><b>Direction</b></td>
+			<td>Left to right</td>
+		</tr>
+		<tr>
+			<td><b>Founded</b></td>
+			<td>2010 (6344)</td>
+		</tr>
+		<tr>
+			<td><b>No. of teams</b></td>
+			<td>10</td>
+		</tr>
+  </table>
+
+	  <div class="section">
+		<div class="header" onclick="toggle(this)">Contents [show]</div>
+		<div class="content">
+		  <ol>
+			<li><a href="#anchor2">Alphabet</a></li>
+			<li><a href="#anchor3">Grammar</a></li>
+			<li><a href="#anchor4">Translator</a></li>
+			<li><a href="#anchor5">Script</a></li>
+			<li><a href="#anchor6">Metahistory</a></li>
+		  </ol>
+		</div>
+	  </div>
+	</div>
+</div>
+
+<script>
+	 function toggle(header) {
+  const content = header.nextElementSibling;
+
+  if (content.style.maxHeight && content.style.maxHeight !== "0px") {
+    // Currently open → close it
+    content.style.maxHeight = "0px";
+    header.textContent = header.textContent.replace("[hide]", "[show]");
+  } else {
+    // Currently closed → open it
+    content.style.maxHeight = content.scrollHeight + "px"; // dynamic height
+    header.textContent = header.textContent.replace("[show]", "[hide]");
+  }
+} 
+</script> 
+
+<div class="main">
+		<p> The Calvinese language (siehelehinhitsi or <span style="font-family: Calvinese; font-size: 12;">CALVINESE</span>) a alphabetical code language written and spoken almost exlcusively
+      in the <a href="kouzislands.html">Kouz Islands</a>. Calvinese is based on the Latin alphabet and emerged largely as a resistance
+      to British rule which began in the late 19th century. As the independence movement grew in the wake of World War I, the language emerged
+      as a way for islanders to communicate one another without speaking English. The language benefitted from it's simplicity and root in the latin alphabet 
+      which allowed for a common language that bridged generations without directly speaking English. Additionally, it centralized many prior dialects that were also spoken in the region. The popularity of the language boomed, with many <a href="khouzanreligion.html">Khouzan religious leaders</a>
+      translating religious texts into Calvinese. Today, Khouzan religious leader maintain that religious texts must be taught in Calvinese. 
+    </p>
+    <p>Upon Kouz independence, fluency has declined throughout the island chain. This decline was exacerbated by the secularist movement in the early 2000s, where activists associated the language with religious instruction. 
+      In turn, English is now widely spoken in Calvinvill. However, there has been a recent incentive by the Calvinvill government to bolster Calvinese language learning. In Khouza, largely due to the continuity of religious instruction, Calvinese is still pominent. 
+    </p>
+</div>
+<br>
+
+<div class="main">
+	<h1 id="anchor2" colspan="2" style="font-size: 18px; text-align:left; background-color:#EEEEEE">Alphabet</h1>
+    <p> The Calvinese alphabet is based on the Latin alphabet and consists of 26 letters. Each letter in the Calvinese alphabet is 
+      based on the phoentic pronunciation of the Latin alphabet. This means each 'letter' in the Calvinese alphabet often consists of a grapheme of two 
+      multiple Latin letters. Below is the standardized Calvinese alphabet, as there have been different past iterations.
+    </p>
+    <div>
+      <table class="wikitable" style="width:min-content; height:min-content">
+          <tr>
+            <td colspan="1" style="background:#d8e2f1;">English</td>
+            <td colspan="1" style="background:#dbaf58;">Calvinese</td>
+            <td colspan="1" style="background:#d8e2f1;">English</td>
+            <td colspan="1" style="background:#dbaf58;">Calvinese</td>
+            <td colspan="1" style="background:#d8e2f1;">English</td>
+            <td colspan="1" style="background:#dbaf58;">Calvinese</td>
+            <td colspan="1" style="background:#d8e2f1;">English</td>
+            <td colspan="1" style="background:#dbaf58;">Calvinese</td>
+            <td colspan="1" style="background:#d8e2f1;">English</td>
+            <td colspan="1" style="background:#dbaf58;">Calvinese</td>
+          </tr>
+          <tr>
+              <td>A</td>
+              <td>EH</td>
+              <td>B</td>
+              <td>BE</td>
+              <td>C</td>
+              <td>SI</td>
+              <td>D</td>
+              <td>DI</td>
+              <td>E</td>
+              <td>I</td>
+          </tr>
+          <tr>
+              <td>F</td>
+              <td>FH</td>
+              <td>G</td>
+              <td>JE</td>
+              <td>H</td>
+              <td>CH</td>
+              <td>I</td>
+              <td>HI</td>
+              <td>J</td>
+              <td>GA</td>
+          </tr>
+          <tr>
+              <td>K</td>
+              <td>KH</td>
+              <td>L</td>
+              <td>EL</td>
+              <td>M</td>
+              <td>MN</td>
+              <td>N</td>
+              <td>NH</td>
+              <td>O</td>
+              <td>OU</td>
+          </tr>
+          <tr>
+              <td>P</td>
+              <td>PE</td>
+              <td>Q</td>
+              <td>KU</td>
+              <td>R</td>
+              <td>AR</td>
+              <td>S</td>
+              <td>TS</td>
+              <td>T</td>
+              <td>TI</td>
+          </tr>
+          <tr>
+              <td>U</td>
+              <td>OI</td>
+              <td>V</td>
+              <td>E</td>
+              <td>W</td>
+              <td>VU</td>
+              <td>X</td>
+              <td>LC</td>
+              <td>Y</td>
+              <td>IE</td>
+          </tr>
+          <tr>
+            <td>Z</td>
+            <td>A</td>
+          </tr>
+      </table>   
+    </div>
+</div>
+<br>
+
+<div class="main">
+	<h1 id="anchor3" colspan="2" style="font-size: 18px; text-align:left; background-color:#EEEEEE">Grammar</h1>
+    <p>Since the Calvinese language acts like an alphabetical code, English grammar remains largely the same when 
+      translating. However there are some key differences. When a single letter repeats within a word a single apostrophe replaces the following letter.
+    </p>
+    <p> For example:
+      <div class="textbox">
+        Test --> ti'tsti; instead of <i>tiitsti</i>
+      </div>
+    </p>
+    <br>
+    <p>
+      When a 'chunk' repeats (like the Calvinese letter E) the repeating chunk is replaced with a "
+    </p>
+    <p> For example:
+      <div class="textbox">
+        Book --> beou"kh; instead of <i>beououkh</i>
+      </div>
+    </p>
+    <br>
+    <p>
+      Yet, with words that end in the same letter (like see or tree), what apostrophe to use can be ambiguous. However, 
+      the " should be used since the chunk is repeating.
+    </p>
+    <p> For example:
+      <div class="textbox">
+        See --> tsi"; instead of <i>tsii</i>
+      </div>
+    </p>
+    <br>
+    <p> Calvinese punctuation mirrors English punctuation. However, since a singular apostrophe and quotation marks 
+      are used as grammar indicators in Calvinese, French guillemets are used when quoting someone or something. Since 
+      each letter in the Calvinese alphabet consists of two English letters, abbreviations are translated into Calvinese 
+      using the first letter of the corresponding Calvinese letter. 
+    </p>
+</div>
+<br>
+
+<div class="main">
+	<h1 id="anchor4" colspan="2" style="font-size: 18px; text-align:left; background-color:#EEEEEE">Translator</h1>
+    <p> Calvinese is typically written in all lowercase, so despite the input, the output will be lowecase. The translator will immediately convert the quotes to guillemets. All other English punctuation 
+       will be preserved. Most importantly, <b>do not</b> use contractions, translations will be incorrect.
+    </p>
+
+<textarea id="input"></textarea>
+<br>
+<button onclick="translateText()">Translate</button>
+
+<div id="output"></div>
+
+<script>
+const alphabet = {
+    a: "eh", b: "be", c: "si", d: "di", e: "i",
+    f: "fh", g: "je", h: "ch", i: "hi", j: "ga",
+    k: "kh", l: "el", m: "mn", n: "nh", o: "ou",
+    p: "pe", q: "ku", r: "ar", s: "ts", t: "ti",
+    u: "oi", v: "e", w: "vu", x: "lc", y: "ie", z: "a"
+};
+
+function translateText() {
+    const text = document.getElementById("input").value;
+
+    let output = "";
+    let i = 0;
+
+    let previousChunk = "";
+    let inQuote = false;
+
+    while (i < text.length) {
+    
+    // -------------------------
+    // FORMATTING PASS-THROUGH
+    // -------------------------
+
+    // bold (**text**)
+    if (text.slice(i, i + 2) === "**") {
+        output += "**";
+        i += 2;
+        continue;
+    }
+
+    // underline (__text__)
+    if (text.slice(i, i + 2) === "__") {
+        output += "__";
+        i += 2;
+        continue;
+    }
+
+    // italics (*text* or _text_)
+    if (text[i] === "*" || text[i] === "_") {
+        output += text[i];
+        i++;
+        continue;
+    }                                     
+        // -------------------------
+        // QUOTES → GUILLEMETS
+        // -------------------------
+        if (
+            text[i] === '"' ||
+            text[i] === "“" ||
+            text[i] === "”"
+        ) {
+            output += inQuote ? " »" : "« ";
+            inQuote = !inQuote;
+            previousChunk = "";
+            i++;
+            continue;
+        }
+
+        // -------------------------
+        // ABBREVIATIONS (ACRONYM HANDLING)
+        // -------------------------
+
+        let abbrevMatch = text.slice(i).match(/^(?:[A-Z]\.?){2,}/);
+
+        if (abbrevMatch) {
+            const raw = abbrevMatch[0];
+
+            // remove dots to get pure letters
+            const letters = raw.replace(/\./g, "");
+
+            // ensure it's a real acronym (2+ uppercase letters)
+            if (letters.length >= 2 && letters === letters.toUpperCase()) {
+
+                // build translation: always lowercase + dot-separated phonemes
+                let result = letters
+                    .toLowerCase()
+                    .split("")
+                    .map(char => alphabet[char]?.[0] || "")
+                    .filter(Boolean)
+                    .join(".");
+
+                // ALWAYS enforce trailing dot in translation
+                result += ".";
+
+                output += result;
+
+                previousChunk = "";
+                i += raw.length;
+                continue;
+            }
+        }
+        // -------------------------
+        // PUNCTUATION HANDLING
+        // -------------------------
+        if (
+            text[i] === " " ||
+            text[i] === "." ||
+            text[i] === "," ||
+            text[i] === "!" ||
+            text[i] === "?" ||
+            text[i] === ":" ||
+            text[i] === ";" ||
+            text[i] === "(" ||
+            text[i] === ")" ||
+            text[i] === "—" ||
+            text[i] === "–" ||
+            text[i] === "'"
+        ) {
+            output += text[i];
+            previousChunk = "";
+            i++;
+            continue;
+        }
+
+        // -------------------------
+        // CORE TRANSLATION
+        // -------------------------
+        let c = text[i];
+        let key = c.toLowerCase();
+
+        let chunk = alphabet[key];
+
+        if (!chunk) {
+            i++;
+            continue;
+        }
+
+        // count consecutive identical letters
+        let count = 1;
+        while (
+            i + count < text.length &&
+            text[i + count] === c
+        ) {
+            count++;
+        }
+
+        const originalChunk = chunk;
+
+        // apostrophe rule (chunk boundary collision)
+        if (
+            previousChunk &&
+            previousChunk[previousChunk.length - 1] === chunk[0]
+        ) {
+            chunk = "'" + chunk.slice(1);
+        }
+
+        output += chunk;
+
+        // repetition markers
+        if (count === 2) {
+            output += '"';
+        } else if (count > 2) {
+            output += '"'.repeat(Math.floor(count / 2));
+            if (count % 2 === 1) output += "'";
+        }
+
+        previousChunk = originalChunk;
+        i += count;
+    }
+
+    document.getElementById("output").textContent = output;
+}
+</script>
+</div>
+<br>
+
+<div class="main">
+	<h1 id="anchor5" colspan="2" style="font-size: 18px; text-align:left; background-color:#EEEEEE">Script</h1>
+    <table class="wikitable" style="float: right; width: min-content; height: min-content; padding: 3px">
+      <th colspan="5" style="background:#d8e2f1;">English latin alphabet to Calvinese script</th>
+          <tr>
+            <td colspan="1" style="background:#EEEEEE;">A</td>
+            <td colspan="1" style="background:#EEEEEE;">B</td>
+            <td colspan="1" style="background:#EEEEEE;">C</td>
+            <td colspan="1" style="background:#EEEEEE;">D</td>
+            <td colspan="1" style="background:#EEEEEE;">E</td>
+          </tr>
+          <tr style="font-family: Calvinese; font-size:12px">
+              <td>A</td>
+              <td>B</td>
+              <td>C</td>
+              <td>D</td>
+              <td>E</td>
+          </tr>
+          <tr>
+            <td colspan="1" style="background:#EEEEEE;">F</td>
+            <td colspan="1" style="background:#EEEEEE;">G</td>
+            <td colspan="1" style="background:#EEEEEE;">H</td>
+            <td colspan="1" style="background:#EEEEEE;">I</td>
+            <td colspan="1" style="background:#EEEEEE;">J</td>
+          </tr>
+          <tr style="font-family: Calvinese; font-size:12px">
+              <td>F</td>
+              <td>G</td>
+              <td>H</td>
+              <td>I</td>
+              <td>J</td>
+          </tr>
+          <tr>
+            <td colspan="1" style="background:#EEEEEE;">K</td>
+            <td colspan="1" style="background:#EEEEEE;">L</td>
+            <td colspan="1" style="background:#EEEEEE;">M</td>
+            <td colspan="1" style="background:#EEEEEE;">N</td>
+            <td colspan="1" style="background:#EEEEEE;">O</td>
+          </tr>
+          <tr style="font-family: Calvinese; font-size:12px">
+              <td>K</td>
+              <td>L</td>
+              <td>M</td>
+              <td>N</td>
+              <td>O</td>
+          </tr>
+          <tr>
+            <td colspan="1" style="background:#EEEEEE;">P</td>
+            <td colspan="1" style="background:#EEEEEE;">Q</td>
+            <td colspan="1" style="background:#EEEEEE;">R</td>
+            <td colspan="1" style="background:#EEEEEE;">S</td>
+            <td colspan="1" style="background:#EEEEEE;">T</td>
+          </tr>
+          <tr style="font-family: Calvinese; font-size:12px">
+              <td>P</td>
+              <td>Q</td>
+              <td>R</td>
+              <td>S</td>
+              <td>T</td>
+          </tr>
+          <tr>
+            <td colspan="1" style="background:#EEEEEE;">U</td>
+            <td colspan="1" style="background:#EEEEEE;">V</td>
+            <td colspan="1" style="background:#EEEEEE;">W</td>
+            <td colspan="1" style="background:#EEEEEE;">X</td>
+            <td colspan="1" style="background:#EEEEEE;">Y</td>
+          </tr>
+          <tr style="font-family: Calvinese; font-size:12px">
+              <td>U</td>
+              <td>V</td>
+              <td>W</td>
+              <td>X</td>
+              <td>Y</td>
+          </tr>
+          <tr>
+            <td colspan="1" style="background:#EEEEEE;">Z</td>
+          </tr>
+          <tr style="font-family: Calvinese; font-size:12px">
+              <td>Z</td>
+          </tr>
+    </table>
+
+    <p>In addition to the romanized Calvinese alphabet, there was also the development of a script. The Calvinese script is composed of 
+        21 individual graphemes, with three standalone graphemes (<span style="font-family: Calvinese; font-size: 10px;">a e i</span>). The 
+    other eighteen graphemes will combine into different pairs which will create 26 respective glyphs. </p>
+
+    <div class="converter-container">
+      <div class="converter-panel">
+          <h3>English → Calvinese script</h3>
+          <textarea id="englishInput"
+          placeholder="Type English here..."></textarea>
+          <div id="englishOutput"
+          class="calvinese-output"></div>
+      </div>
+      <div class="converter-panel">
+          <h3>Romanized Calvinese → Calvinese script</h3>
+          <textarea id="romanInput"
+          placeholder="Type Calvinese romanization here..."></textarea>
+          <div id="romanOutput"
+          class="calvinese-output"></div>
+      </div>
+    </div>
+    
+<script>
+
+const chunks=[
+    "eh","be","si","di","fh","je","ch","hi","ga","kh",
+    "el","mn","nh","ou","pe","ku","ar","ts","ti","oi",
+    "vu","lc","ie","i","e","a"
+];
+
+chunks.sort((a,b)=>b.length-a.length);
+
+
+// ----------------------
+// English -> Script
+// ----------------------
+
+function englishToScript(text){
+
+    text=text.toUpperCase();
+
+    let output="";
+
+    for(let i=0;i<text.length;i++){
+
+        const current=text[i];
+        const previous=i>0 ? text[i-1] : "";
+
+        if(
+            current>="A" &&
+            current<="Z" &&
+            current===previous
+        ){
+
+            output+='"';
+
+        }
+        else{
+
+            output+=current;
+
+        }
+
+    }
+
+    return output;
+
+}
+
+// ----------------------
+// Romanized -> Script
+// ----------------------
+
+function romanToScript(text){
+
+    text=text.toLowerCase();
+
+    // Expand apostrophe rule:
+    // ti'tsti -> titsti
+    let expanded="";
+
+    for(let i=0;i<text.length;i++){
+
+        if(text[i]==="'"){
+
+            if(i>0){
+                expanded+=text[i-1];
+            }
+
+        }
+        else{
+
+            expanded+=text[i];
+
+        }
+
+    }
+
+
+    // Parse chunks and apply " repeat rule
+    let parsed=[];
+    let i=0;
+
+    while(i<expanded.length){
+
+        if(/\s/.test(expanded[i])){
+
+            parsed.push(expanded[i]);
+            i++;
+            continue;
+
+        }
+
+        let found=false;
+
+        for(const chunk of chunks){
+
+            if(expanded.substring(i,i+chunk.length)===chunk){
+
+                parsed.push(chunk);
+                i+=chunk.length;
+                found=true;
+                break;
+
+            }
+
+        }
+
+        if(!found){
+
+            parsed.push(expanded[i]);
+            i++;
+
+        }
+
+    }
+
+
+    let output="";
+
+    for(let j=0;j<parsed.length;j++){
+
+        if(
+            j>0 &&
+            parsed[j]===parsed[j-1] &&
+            parsed[j].length>1
+        ){
+
+            output+='"';
+
+        }
+        else{
+
+            output+=parsed[j];
+
+        }
+
+    }
+
+    return output;
+
+}
+
+// ----------------------
+// Live typing
+// ----------------------
+
+englishInput.addEventListener("input",()=>{
+
+    englishOutput.textContent=
+        englishToScript(
+            englishInput.value
+        );
+
+});
+
+
+romanInput.addEventListener("input",()=>{
+
+    romanOutput.textContent=
+        romanToScript(
+            romanInput.value
+        );
+
+});
+
+</script>
+</div>
+
+<div class="main">
+	<h1 id="anchor6" colspan="2" style="font-size: 18px; text-align:left; background-color:#EEEEEE">Metahistory</h1>
+		<p>Calvinese first emerged as a concept around 2016, maybe a few years earlier. I think the desire for an alternative language emerged because of a desire
+        to separate (both thematically and geographically) Calvinvill's history outside the direct sphere of the United States. I wanted Calvinvill to be different. To understand
+        this vision I had, we need to understand Calvin in 2016. I had just spent six months in Arizona at that point, turning 14 that January. I started high school that August.
+        My top three songs on Spotify were a british R&B song (Walk by Kwabs), On verra by Nekfeu, and La Marseillaise (the French national anthem). Lastly, Trump had been elected the preceding November and became president in January. 
+        This context is integral to understanding the initial creation of Calvinese: I was lonely, I was deeply ashamed to be an American (and started to be introduced to more radical politics), and lastly, I started learning French. 
+       Beginning to learn French opened up a different world. By looking at France I think I saw a nation legitimized by its language. However flawed that notion is, I believe it installed the idea that for in order for Calvinvill to be 'legitimate' (or as legitimate as a fake country can be) there needed to be a native language spoken there. </p>
+       
+       <p>The script was developed recently, in July 2026. The creation of a script was more practical: I wanted a system that produced shorter words and looked better for heraldry. </p>
+</div>
+</body>
+
+
+    

@@ -1,0 +1,371 @@
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<title>Calvinvill National Basketball League (CNBL)</title>
+
+<style>
+/* Page spacing */
+body {
+  margin: 30px;
+  font-family: Arial, sans-serif;
+} 
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+} 
+</style>
+</head>
+
+<!-- Header -->
+
+<h1 style="text-align:center;">
+  <a href="index.html">
+    <img src="images/emblem2.png" height="125" width="125" alt="Emblem">
+  </a>
+</h1>
+<h2 style="font-family:Georgia; background-color:#D1C4E9;">Calvinvill National Basketball League (CNBL)</h2>
+<body>
+<style>
+
+/* Page spacing */
+
+.main { 
+	margin-bottom: 10px;
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+} 
+
+.main p { 
+	margin: 10px;
+} 
+
+.subheader { 
+	font-size: 12px;
+	font-style: italic;
+	margin-left: 30px;
+} 
+
+/* Infobox */
+.toc {
+  width: 300px;
+  float: right;
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 20px;
+  border: 1px solid #ccc;
+  background: #ffffff;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.toc h1 {
+  background-color: #eee;
+  text-align: center;
+  font-size: 14px;
+  padding: 10px;
+} 
+
+.subcatergories { 
+	padding: 20px;
+	font-size: 12px;
+	margin-right: 20px;
+}
+  
+/* Figure styling */
+.history-figure { 
+  margin: 10px 0;
+}
+
+.history-figure img {
+  display: block;
+  max-width: 100%;
+	margin: 0 auto;
+}
+
+.history-figure figcaption {
+  font-size: 12px;
+  text-align: center;
+  margin-top: 5px;
+}
+
+
+
+/* in text images*/ 
+.history-figure-text { 
+	background-color: #ffffff;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+	margin: 10px;
+} 
+
+.history-figure-text img { 
+	display: block;
+	max-width: 100%;
+} 
+
+.history-figure-text figcaption { 
+	font-size: 12px;
+	font-family: Arial;
+	font-style: italic;
+	padding: 5px;
+} 
+	
+	
+
+/* Accordion section */
+.section {
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.header {
+  background: #eee;
+  padding: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  padding-left: 5px;
+  font-size: 12px;
+}
+
+.content ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 5px 0;
+}
+
+/* wiki table */
+.wikitable {
+    border-collapse: collapse;
+    width: 50%;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    background: #fff;
+    color: #202122;
+    float: center;
+}
+
+.wikitable th,
+.wikitable td {
+    border: 1px solid #a2a9b1;
+    padding: 6px 10px;
+    text-align: left;
+}
+
+.wikitable th {
+    background-color: #eaecf0;
+    font-weight: bold;
+}
+
+.wikitable tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.wikitable caption {
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 8px;
+}
+</style>
+
+<!-- TOC -->
+<div class="main">
+	<div class="toc">
+	  <h1>Calvinvill National Basketball League</h1>
+	  <div class="history-figure">
+		<img src="images/cnbl logo.png" alt="History image" width="200" height="200">
+		<figcaption>Caption goes here</figcaption>
+	</div>
+	<table class="subcatergories">
+		<tr>
+			<td><b>Sport</b></td>
+			<td><a href="sport.html">Basketball</a></td>
+		</tr>
+		<tr>
+			<td><b>Governing Body</b></td>
+			<td>Calvinvill Ministry of Sport</td>
+		</tr>
+		<tr>
+			<td><b>Founded</b></td>
+			<td>2010 (6344)</td>
+		</tr>
+		<tr>
+			<td><b>No. of teams</b></td>
+			<td>10</td>
+		</tr>
+		<tr>
+			<td><b>Most recent champions</b></td>
+			<td><a href="mtn.html">Desert City Mountains</a> (1st title)</td>
+		</tr>
+		<tr>
+			<td><b>Most titles</b></td>
+			<td><a href="water.html">Oceanview Water</a> (3 tites)</td>
+		</tr>
+	</table>
+	  <div class="section">
+		<div class="header" onclick="toggle(this)">Contents [show]</div>
+		<div class="content">
+		  <ol>
+			 <li><a href="#anchor1">Gameplay and format</a></li>
+			<li><a href="#anchor2">Teams</a></li>
+			<li><a href="#anchor3">Records</a></li>
+			<li><a href="#anchor5">Metahistory</a></li>
+		  </ol>
+		</div>
+	  </div>
+	</div>
+</div>
+<script>
+	 function toggle(header) {
+  const content = header.nextElementSibling;
+
+  if (content.style.maxHeight && content.style.maxHeight !== "0px") {
+    // Currently open → close it
+    content.style.maxHeight = "0px";
+    header.textContent = header.textContent.replace("[hide]", "[show]");
+  } else {
+    // Currently closed → open it
+    content.style.maxHeight = content.scrollHeight + "px"; // dynamic height
+    header.textContent = header.textContent.replace("[show]", "[hide]");
+  }
+} 
+</script>
+
+<div class="main">
+	<p> The Calvinvill National Basketball League (CNBL) is a professional basketball league in Calvinvill and Khouza consisting of ten teams
+		split into two divisions, the A division and Z division respectively. The type of basketball played is unique to the Kouz Island chain
+		as each team has three players on the court and games being confined to a point total of 30. Many of the players are homegrown, often being 
+		drafted from various universities after playing <a href="collegebb.html">Calvinvill College Basketball</a>. Basketball broadly is the most 
+		popular sport in Calvinvill and Khouza, with the CNBL being the most popular league.
+	</p>
+
+</div>
+
+<div class="main">
+	<h1 id="anchor1" colspan="1" style="font-size: 18px; text-align:left; background-color:#EEEEEE">Gameplay and format</h1>
+	<div class="history-figure-text" style="float:left">
+		<img src="images/berberflag.png" width="180" height="120" Caption="Amazigh flag">
+			<figcaption><small> Calvinvill basketball positions diagram</small></figcaption>		
+	</div>	
+	<p>	Gameplay consists of three players on the court. Often this will include two guards (also called shooters) and one forwards. Some coaches 
+		have also experimented with using one guard and two forwards, which is uncommon. CNBL rosters are capped at five players, but a teams total 
+		payroll will include two<a href="#anchor4"> B-League players</a>.
+	</p>
+	<p> The CNBL game is composed of two halves. The first team to score fifteen points, or surpass that number, will trigger halftime. Games end when
+		a team scores or surpasses thirty points. Teams are allowed one offensive rebound but if the offensive team secures a second offensive rebound in 
+		a possession, it results in a turnover. There is no shot clock. Besides these adapted differences, the game is largely the same; there is a three-point line.
+		While fouls are rare, they do happen. 
+	</p>
+</div>
+
+<div class="main">
+	<h1 id="anchor2" colspan="1" style="font-size: 18px; text-align:left; background-color:#EEEEEE">Teams</h1>
+	<p>The CNBL originated with eight teams, but expanded to ten after two seasons. There is one team in Khouza, with the rest of the nine teams being in Calvinvill.
+		[Insert notebook page of teams]
+		[Insert map of teams]
+	<table class="wikitable">
+    <tr>
+        <th colspan="4" style="background:#d8e2f1;">A Division</th>
+    </tr>
+    <tr>
+        <th>Team</th>
+        <th>Location</th>
+        <th>Arena</th>
+        <th>Titles</th>
+    </tr>
+    <tr>
+        <td><a href="trees.html">Brunswick Trees</a></td>
+        <td><a href="brinkley.html">Brinkley</a>,<a href="brunswick.html"> Brunswick Province</a>, CV</td>
+        <td>Bi-Mart Arena</td>
+        <td>0</td>
+    </tr>
+	<tr>
+        <td><a href="carrots.html">Castillo Carrots</a></td>
+        <td><a href="NSD.html">Nueva Santo Domingo</a>, <a href="Castillo.html">Castillo Province</a>, CV</td>
+        <td>Castillo Coliseum</td>
+        <td>0</td>
+    </tr>
+	<tr>
+        <td><a href="bulbs.html">Beauville Bulbs</a></td>
+        <td><a href="Beauville.html">Beauville</a>, <a href="Selias.html">Selias Province</a>, CV</td>
+        <td>Calvinvill State Electric (CSE) Center</td>
+        <td>0</td>
+    </tr>
+	<tr>
+        <td><a href="berrys.html">Huntley Meadows Berrys</a></td>
+        <td><a href="huntley.html">Huntley Meadows</a>, <a href="Castillo.html">Castillo Province</a>, CV</td>
+        <td>Huntley Meadows Community Center</td>
+        <td>0</td>
+    </tr>
+	<tr>
+        <td><a href="robots.html">Calvin City Robots</a></td>
+        <td><a href="CalvinCity.html">Calvin City</a>, <a href="Calvin.html">Calvin Province</a>, CV</td>
+        <td>CT Arena</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <th colspan="4" style="background:#f1d8d8;">Z Division</th>
+    </tr>
+   <tr>
+        <td><a href="Rose.html">Florenzi Rose</a></td>
+        <td><a href="Meregalli.html">Meregalli</a>, <a href="Florenzi.html">Florenzi Province</a>, CV</td>
+        <td>Castillo Coliseum</td>
+        <td>2</td>
+    </tr>
+	<tr>
+        <td><a href="water.html">Oceanview Water</a></td>
+        <td><a href="Oceanview.html">Oceanview</a>, <a href="OceanviewProv.html">Oceanview Province</a>, CV</td>
+        <td>Bayside Amphitheatre</td>
+        <td>3</td>
+    </tr>
+	<tr>
+        <td><a href="gold.html">St. Scott Gold</a></td>
+        <td><a href="StScott.html">St. Scott</a>, <a href="PortaoProv.html">Portao Province</a>, CV</td>
+        <td>Castillo Coliseum</td>
+        <td>1</td>
+    </tr>
+	<tr>
+        <td><a href="mtn.html">Desert City Mountains</a></td>
+        <td><a href="DesertCity.html">Desert City</a>, <a href="Khouza.html">Khouza</a></td>
+        <td>Prince Ahmed Arena</td>
+        <td>1</td>
+    </tr>
+	<tr>
+        <td><a href="Bats.html">Calvin City Bats</a>(formerly Bullets)</td>
+        <td><a href="CalvinCity.html">Calvin City</a>, <a href="Calvin.html">Calvin Province</a>, CV</td>
+        <td>CT Arena</td>
+        <td>1</td>
+    </tr>
+	</table>
+	</p>
+</div>
+
+<div class="main">
+	<h1 id="anchor3" colspan="1" style="font-size: 18px; text-align:left; background-color:#EEEEEE">Records</h1>
+	<p>Scoring records were not always kept for the league. However, in the more recent seasons, extensive
+		record-keeping was made a priority.
+  </p>
+</div>
+
+<div class="main">
+	<h1 id="anchor5" colspan="1" style="font-size: 18px; text-align:left; background-color:#EEEEEE">Metahistory</h1>
+	<p> Some of the first "CNBL" games were played in the loft of my childhood house in Virginia. Unlike to other Calvinvill sports teams, like 
+    the <a href="arrows.html">Calvinvill Arrows</a> and the <a href="bluesox.html">Calvin City Blue Sox</a>, created teams were organized 
+    formally into a league.
+  </p>
+  <p> It was not until I moved to Arizona where the league really picked up. I did not have many friends and I had a basketball hoop in my driveway.
+    I took advantage of the good weather and often shot around, until I decided to mimick CNBL and <a href="collegebb.html">Calvinvill College Basketball</a>
+    games. I was able to fine tune details of gameplay, track statistics, and develop player storylines.
+  </p>
+</div>
+

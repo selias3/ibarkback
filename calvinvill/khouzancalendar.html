@@ -1,0 +1,2024 @@
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<title>Khouzan calendar</title>
+
+<style>
+/* font */
+
+@font-face {
+    font-family: "Calvinese";
+    src: url("calvinese4.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Page spacing */
+body {
+  margin: 30px;
+  font-family: Arial, sans-serif;
+} 
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+} 
+</style>
+</head>
+
+<!-- Header -->
+
+<h1 style="text-align:center;">
+  <a href="index.html">
+    <img src="images/emblem2.png" height="125" width="125" alt="Emblem">
+  </a>
+</h1>
+<h2 style="font-family:Georgia; background-color:#D1C4E9;">Khouzan calendar</h2>
+
+
+
+<body>
+<style>
+/* Page spacing */
+
+.main { 
+	margin-bottom: 10px;
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+} 
+
+.main p { 
+	margin: 10px;
+} 
+
+.subheader { 
+	font-size: 12px;
+	font-style: italic;
+	margin-left: 30px;
+} 
+
+/* Infobox */
+.toc {
+  width: 300px;
+  float: right;
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 20px;
+  border: 1px solid #ccc;
+  background: #ffffff;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.toc h1 {
+  background-color: #eee;
+  text-align: center;
+  font-size: 14px;
+  padding: 10px;
+} 
+  
+  
+/* Figure styling */
+.history-figure { 
+  margin: 10px 0;
+}
+
+.history-figure img {
+  display: block;
+  max-width: 100%;
+	margin: 0 auto;
+}
+
+.history-figure figcaption {
+  font-size: 12px;
+  text-align: center;
+  margin-top: 5px;
+}
+
+
+
+/* in text images*/ 
+.history-figure-text { 
+	background-color: #ffffff;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+	margin: 10px;
+} 
+
+.history-figure-text img { 
+	display: block;
+	max-width: 100%;
+} 
+
+.history-figure-text figcaption { 
+	font-size: 12px;
+	font-family: Arial;
+	font-style: italic;
+	padding: 5px;
+} 
+	
+	
+
+/* Accordion section */
+.section {
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.header {
+  background: #eee;
+  padding: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  padding-left: 5px;
+  font-size: 12px;
+}
+
+.content ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 5px 0;
+}
+
+/* calendar */ 
+
+        /* =====================================================
+           GENERAL
+           ===================================================== */
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        body {
+
+            margin: 0;
+
+            padding: 30px;
+
+            font-family:
+                Arial,
+                sans-serif;
+
+        }
+
+
+        /* =====================================================
+           CALVINESE FONT
+           ===================================================== */
+
+        @font-face {
+
+            font-family: "Calvinese";
+
+            src:
+                url("calvinese4.ttf")
+                format("truetype");
+
+        }
+
+
+        /* =====================================================
+           WRAPPER
+           ===================================================== */
+
+        .calendar-wrapper {
+
+            width: 320px;
+
+        }
+
+
+        /* =====================================================
+           CALENDAR TABLE
+           ===================================================== */
+
+        .calendar {
+
+            width: 100%;
+
+            border-collapse: collapse;
+
+            border:
+                1px solid
+                #a2a9b1;
+
+            background:
+                white;
+
+        }
+
+
+        /* =====================================================
+           HEADER
+           ===================================================== */
+
+        .calendar-header th {
+
+            height: 42px;
+
+            border-bottom:
+                1px solid
+                #a2a9b1;
+
+        }
+
+
+        /* =====================================================
+           NAVIGATION
+           ===================================================== */
+
+        .nav-button {
+
+            width: 32px;
+
+            height: 32px;
+
+            border: none;
+
+            background:
+                transparent;
+
+            font-size: 22px;
+
+            cursor: pointer;
+
+        }
+
+
+        .nav-button:hover {
+
+            background:
+                #eaecf0;
+
+        }
+
+
+        /* =====================================================
+           MONTH TITLE
+           ===================================================== */
+
+        .month-title {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 6px;
+
+            white-space: nowrap;
+
+        }
+
+
+        .month-name {
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+        }
+
+
+        .month-year {
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+        }
+
+
+        /* =====================================================
+           CALVINESE SCRIPT
+           ===================================================== */
+
+        .month-name.script {
+
+            font-family:
+                "Calvinese",
+                sans-serif;
+
+        }
+
+
+        /* =====================================================
+           WEEKDAYS
+           ===================================================== */
+
+        .weekdays th {
+
+            height: 28px;
+
+            padding: 2px;
+
+            border-bottom:
+                1px solid
+                #a2a9b1;
+
+            background:
+                #f8f9fa;
+
+            font-size: 10px;
+
+            white-space: nowrap;
+
+        }
+
+
+        /* =====================================================
+           DAYS
+           ===================================================== */
+
+        .calendar td {
+
+            width: 14.285%;
+
+            height: 34px;
+
+            padding: 0;
+
+            text-align: center;
+
+        }
+
+
+        /* =====================================================
+           DAY BUTTON
+           ===================================================== */
+
+        .day {
+
+            width: 32px;
+
+            height: 30px;
+
+            border: none;
+
+            border-radius: 2px;
+
+            background:
+                transparent;
+
+            cursor: pointer;
+
+        }
+
+
+        .day:hover {
+
+            background:
+                #eaecf0;
+
+        }
+
+
+        .day.today {
+
+            border:
+                1px solid
+                #36c;
+
+            font-weight: bold;
+
+        }
+
+
+        .day.selected {
+
+            background:
+                #36c;
+
+            color:
+                white;
+
+        }
+
+
+        /* =====================================================
+           RESULT
+           ===================================================== */
+
+        .result {
+
+            margin-top: 10px;
+
+            padding: 10px;
+
+            border:
+                1px solid
+                #a2a9b1;
+
+            text-align: center;
+
+        }
+
+
+        .result-label {
+
+            font-size: 11px;
+
+            color:
+                #54595d;
+
+        }
+
+
+        .result-date {
+
+            margin-top: 4px;
+
+            font-weight: bold;
+
+        }
+
+
+        /* =====================================================
+           FLIP BUTTON
+           ===================================================== */
+
+        .flip-button {
+
+            width: 100%;
+
+            margin-top: 8px;
+
+            padding: 8px;
+
+            border:
+                1px solid
+                #a2a9b1;
+
+            background:
+                white;
+
+            cursor: pointer;
+
+        }
+
+
+        .flip-button:hover {
+
+            background:
+                #eaecf0;
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="calendar-wrapper">
+
+
+    <!-- =====================================================
+         CALENDAR TABLE
+         ===================================================== -->
+
+    <table
+        class="calendar"
+        id="calendar"
+    >
+
+        <thead>
+
+
+            <!-- MONTH HEADER -->
+
+            <tr class="calendar-header">
+
+                <th>
+
+                    <button
+                        id="previousMonth"
+                        class="nav-button"
+                        aria-label="Previous month"
+                    >
+                        ‹
+                    </button>
+
+                </th>
+
+
+                <th
+                    colspan="5"
+                    class="month-header"
+                >
+
+                    <div class="month-title">
+
+                        <span
+                            class="month-name"
+                            id="monthName"
+                        ></span>
+
+                        <span
+                            class="month-year"
+                            id="monthYear"
+                        ></span>
+
+                    </div>
+
+                </th>
+
+
+                <th>
+
+                    <button
+                        id="nextMonth"
+                        class="nav-button"
+                        aria-label="Next month"
+                    >
+                        ›
+                    </button>
+
+                </th>
+
+            </tr>
+
+
+            <!-- WEEKDAYS -->
+
+            <tr class="weekdays">
+
+                <th>mnou</th>
+
+                <th>tioi'</th>
+
+                <th>vudi</th>
+
+                <th>tich</th>
+
+                <th>fhar</th>
+
+                <th>tseh</th>
+
+                <th>tsoi</th>
+
+            </tr>
+
+
+        </thead>
+
+
+        <tbody
+            id="calendarDays"
+        ></tbody>
+
+
+    </table>
+
+
+    <!-- =====================================================
+         SELECTED DATE
+         ===================================================== -->
+
+    <div class="result">
+
+        <div
+            class="result-label"
+            id="resultLabel"
+        >
+            Khouzan date
+        </div>
+
+
+        <div
+            class="result-date"
+            id="resultDate"
+        >
+            Select a day
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         FLIP CALENDAR
+         ===================================================== -->
+
+    <button
+        id="flipButton"
+        class="flip-button"
+    >
+        Show Khouzan Calendar
+    </button>
+
+
+</div>
+
+
+<script>
+
+
+/* =========================================================
+   KHOUZAN MONTHS
+   ========================================================= */
+
+const customMonths = [
+
+    {
+        name: "siahpiare",
+        days: 73
+    },
+
+    {
+        name: "ahpiar",
+        days: 73
+    },
+
+    {
+        name: "eliou",
+        days: 73
+    },
+
+    {
+        name: "tsipeti",
+        days: 73
+    },
+
+    {
+        name: "di'si'",
+        days: 73
+    },
+
+    {
+        name: "ilctiareh",
+        days: 1
+    }
+
+];
+
+
+/* =========================================================
+   KHOUZAN YEAR
+   ========================================================= */
+
+const KHOUZAN_YEAR_OFFSET = 4334;
+
+
+/* =========================================================
+   CALENDAR STATE
+   ========================================================= */
+
+let showingCustom =
+    false;
+
+
+let displayedDate =
+    new Date();
+
+
+let selectedDate =
+    new Date();
+
+
+/* =========================================================
+   DOM ELEMENTS
+   ========================================================= */
+
+const calendarDays =
+    document.getElementById(
+        "calendarDays"
+    );
+
+
+const monthName =
+    document.getElementById(
+        "monthName"
+    );
+
+
+const monthYear =
+    document.getElementById(
+        "monthYear"
+    );
+
+
+const previousMonth =
+    document.getElementById(
+        "previousMonth"
+    );
+
+
+const nextMonth =
+    document.getElementById(
+        "nextMonth"
+    );
+
+
+const flipButton =
+    document.getElementById(
+        "flipButton"
+    );
+
+
+const resultLabel =
+    document.getElementById(
+        "resultLabel"
+    );
+
+
+const resultDate =
+    document.getElementById(
+        "resultDate"
+    );
+
+
+/* =========================================================
+   DATE HELPERS
+   ========================================================= */
+
+function isLeapYear(
+    year
+) {
+
+    return (
+
+        year % 4 === 0
+
+        &&
+
+        (
+
+            year % 100 !== 0
+
+            ||
+
+            year % 400 === 0
+
+        )
+
+    );
+
+}
+
+
+function sameDate(
+    date1,
+    date2
+) {
+
+    return (
+
+        date1.getFullYear() ===
+        date2.getFullYear()
+
+        &&
+
+        date1.getMonth() ===
+        date2.getMonth()
+
+        &&
+
+        date1.getDate() ===
+        date2.getDate()
+
+    );
+
+}
+
+
+/* =========================================================
+   DAY OF YEAR
+   ========================================================= */
+
+function getDayOfYear(
+    date
+) {
+
+    const start =
+        new Date(
+            date.getFullYear(),
+            0,
+            1
+        );
+
+
+    return (
+
+        Math.floor(
+
+            (
+                date -
+                start
+            )
+            /
+            86400000
+
+        )
+
+        + 1
+
+    );
+
+}
+
+
+/* =========================================================
+   MONDAY-FIRST WEEK
+   ========================================================= */
+
+function getMondayFirstDay(
+    date
+) {
+
+    return (
+
+        date.getDay() + 6
+
+    ) % 7;
+
+}
+
+
+/* =========================================================
+   GREGORIAN → KHOUZAN
+   ========================================================= */
+
+function gregorianToKhouzan(
+    date
+) {
+
+    const gregorianYear =
+        date.getFullYear();
+
+
+    const khouzanYear =
+
+        gregorianYear +
+
+        KHOUZAN_YEAR_OFFSET;
+
+
+    let remaining =
+        getDayOfYear(
+            date
+        );
+
+
+    for (
+
+        let i = 0;
+
+        i < customMonths.length;
+
+        i++
+
+    ) {
+
+        const month =
+            customMonths[i];
+
+
+        /*
+         * ilctiareh only exists
+         * during Gregorian leap years.
+         */
+
+        if (
+
+            month.name ===
+            "ilctiareh"
+
+            &&
+
+            !isLeapYear(
+                gregorianYear
+            )
+
+        ) {
+
+            continue;
+
+        }
+
+
+        if (
+
+            remaining <=
+            month.days
+
+        ) {
+
+            return {
+
+                year:
+                    khouzanYear,
+
+                gregorianYear:
+                    gregorianYear,
+
+                month:
+                    month.name,
+
+                monthIndex:
+                    i,
+
+                day:
+                    remaining
+
+            };
+
+        }
+
+
+        remaining -=
+            month.days;
+
+    }
+
+}
+
+
+/* =========================================================
+   KHOUZAN → GREGORIAN
+   ========================================================= */
+
+function khouzanToGregorian(
+
+    gregorianYear,
+
+    monthIndex,
+
+    day
+
+) {
+
+    let dayOfYear =
+        day;
+
+
+    for (
+
+        let i = 0;
+
+        i < monthIndex;
+
+        i++
+
+    ) {
+
+        const month =
+            customMonths[i];
+
+
+        if (
+
+            month.name ===
+            "ilctiareh"
+
+            &&
+
+            !isLeapYear(
+                gregorianYear
+            )
+
+        ) {
+
+            continue;
+
+        }
+
+
+        dayOfYear +=
+            month.days;
+
+    }
+
+
+    return new Date(
+
+        gregorianYear,
+
+        0,
+
+        dayOfYear
+
+    );
+
+}
+
+
+/* =========================================================
+   MONTH TITLE ANIMATION
+   ========================================================= */
+
+let scriptActive =
+    false;
+
+
+let titleTimer =
+    null;
+
+
+function setMonthTitle(
+
+    name,
+
+    year,
+
+    allowScript
+
+) {
+
+    clearInterval(
+        titleTimer
+    );
+
+
+    scriptActive =
+        false;
+
+
+    /*
+     * Start with the romanized name.
+     */
+
+    monthName.textContent =
+        name;
+
+
+    monthName.classList.remove(
+        "script"
+    );
+
+
+    monthYear.textContent =
+        year;
+
+
+    /*
+     * Gregorian month names
+     * do not animate.
+     */
+
+    if (
+        !allowScript
+    ) {
+
+        return;
+
+    }
+
+
+    /*
+     * Alternate every 3 seconds.
+     */
+
+    titleTimer =
+        setInterval(
+
+            function() {
+
+                scriptActive =
+                    !scriptActive;
+
+
+                if (
+                    scriptActive
+                ) {
+
+                    /*
+                     * Convert to ALL CAPS
+                     * before the Calvinese
+                     * font renders it.
+                     */
+
+                    monthName.textContent =
+
+                        name.toUpperCase();
+
+
+                    monthName.classList.add(
+                        "script"
+                    );
+
+                }
+
+                else {
+
+                    monthName.textContent =
+                        name;
+
+
+                    monthName.classList.remove(
+                        "script"
+                    );
+
+                }
+
+            },
+
+            3000
+
+        );
+
+}
+
+
+/* =========================================================
+   EMPTY TABLE CELL
+   ========================================================= */
+
+function createEmptyCell() {
+
+    const cell =
+        document.createElement(
+            "td"
+        );
+
+
+    cell.className =
+        "empty";
+
+
+    return cell;
+
+}
+
+
+/* =========================================================
+   RENDER GREGORIAN CALENDAR
+   ========================================================= */
+
+function renderGregorian() {
+
+    const year =
+        displayedDate.getFullYear();
+
+
+    const month =
+        displayedDate.getMonth();
+
+
+    const name =
+        displayedDate.toLocaleString(
+
+            "default",
+
+            {
+                month:
+                    "long"
+            }
+
+        );
+
+
+    setMonthTitle(
+
+        name,
+
+        year,
+
+        false
+
+    );
+
+
+    calendarDays.innerHTML =
+        "";
+
+
+    const firstDay =
+        getMondayFirstDay(
+
+            new Date(
+
+                year,
+
+                month,
+
+                1
+
+            )
+
+        );
+
+
+    const daysInMonth =
+        new Date(
+
+            year,
+
+            month + 1,
+
+            0
+
+        ).getDate();
+
+
+    let row =
+        document.createElement(
+            "tr"
+        );
+
+
+    /*
+     * Empty cells before
+     * the first day.
+     */
+
+    for (
+
+        let i = 0;
+
+        i < firstDay;
+
+        i++
+
+    ) {
+
+        row.appendChild(
+            createEmptyCell()
+        );
+
+    }
+
+
+    /*
+     * Create the days.
+     */
+
+    for (
+
+        let day = 1;
+
+        day <= daysInMonth;
+
+        day++
+
+    ) {
+
+        const cell =
+            document.createElement(
+                "td"
+            );
+
+
+        const button =
+            document.createElement(
+                "button"
+            );
+
+
+        button.className =
+            "day";
+
+
+        button.textContent =
+            day;
+
+
+        const date =
+            new Date(
+
+                year,
+
+                month,
+
+                day
+
+            );
+
+
+        /*
+         * Highlight today.
+         */
+
+        if (
+
+            sameDate(
+
+                date,
+
+                new Date()
+
+            )
+
+        ) {
+
+            button.classList.add(
+                "today"
+            );
+
+        }
+
+
+        /*
+         * Highlight selection.
+         */
+
+        if (
+
+            sameDate(
+
+                date,
+
+                selectedDate
+
+            )
+
+        ) {
+
+            button.classList.add(
+                "selected"
+            );
+
+        }
+
+
+        button.addEventListener(
+
+            "click",
+
+            function() {
+
+                selectedDate =
+                    new Date(
+                        date
+                    );
+
+
+                const khouzan =
+                    gregorianToKhouzan(
+                        date
+                    );
+
+
+                resultLabel.textContent =
+                    "Khouzan date";
+
+
+                resultDate.textContent =
+
+                    khouzan.day
+
+                    + " "
+
+                    + khouzan.month
+
+                    + " "
+
+                    + khouzan.year;
+
+
+                renderGregorian();
+
+            }
+
+        );
+
+
+        cell.appendChild(
+            button
+        );
+
+
+        row.appendChild(
+            cell
+        );
+
+
+        if (
+
+            row.children.length ===
+            7
+
+        ) {
+
+            calendarDays.appendChild(
+                row
+            );
+
+
+            row =
+                document.createElement(
+                    "tr"
+                );
+
+        }
+
+    }
+
+
+    /*
+     * Complete the final row.
+     */
+
+    while (
+
+        row.children.length > 0
+
+        &&
+
+        row.children.length < 7
+
+    ) {
+
+        row.appendChild(
+            createEmptyCell()
+        );
+
+    }
+
+
+    if (
+
+        row.children.length > 0
+
+    ) {
+
+        calendarDays.appendChild(
+            row
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   RENDER KHOUZAN CALENDAR
+   ========================================================= */
+
+function renderKhouzan() {
+
+    const current =
+        gregorianToKhouzan(
+            displayedDate
+        );
+
+
+    const month =
+        customMonths[
+            current.monthIndex
+        ];
+
+
+    setMonthTitle(
+
+        month.name,
+
+        current.year,
+
+        true
+
+    );
+
+
+    calendarDays.innerHTML =
+        "";
+
+
+    const firstGregorianDate =
+        khouzanToGregorian(
+
+            current.gregorianYear,
+
+            current.monthIndex,
+
+            1
+
+        );
+
+
+    const firstDay =
+        getMondayFirstDay(
+            firstGregorianDate
+        );
+
+
+    let row =
+        document.createElement(
+            "tr"
+        );
+
+
+    /*
+     * Empty cells before
+     * the first day.
+     */
+
+    for (
+
+        let i = 0;
+
+        i < firstDay;
+
+        i++
+
+    ) {
+
+        row.appendChild(
+            createEmptyCell()
+        );
+
+    }
+
+
+    /*
+     * Create Khouzan days.
+     */
+
+    for (
+
+        let day = 1;
+
+        day <= month.days;
+
+        day++
+
+    ) {
+
+        const cell =
+            document.createElement(
+                "td"
+            );
+
+
+        const button =
+            document.createElement(
+                "button"
+            );
+
+
+        button.className =
+            "day";
+
+
+        button.textContent =
+            day;
+
+
+        const gregorianDate =
+            khouzanToGregorian(
+
+                current.gregorianYear,
+
+                current.monthIndex,
+
+                day
+
+            );
+
+
+        /*
+         * Highlight today.
+         */
+
+        if (
+
+            sameDate(
+
+                gregorianDate,
+
+                new Date()
+
+            )
+
+        ) {
+
+            button.classList.add(
+                "today"
+            );
+
+        }
+
+
+        /*
+         * Highlight selected day.
+         */
+
+        if (
+
+            sameDate(
+
+                gregorianDate,
+
+                selectedDate
+
+            )
+
+        ) {
+
+            button.classList.add(
+                "selected"
+            );
+
+        }
+
+
+        button.addEventListener(
+
+            "click",
+
+            function() {
+
+                selectedDate =
+                    new Date(
+                        gregorianDate
+                    );
+
+
+                resultLabel.textContent =
+                    "Gregorian date";
+
+
+                resultDate.textContent =
+
+                    gregorianDate
+                    .toLocaleDateString(
+
+                        "default",
+
+                        {
+
+                            month:
+                                "long",
+
+                            day:
+                                "numeric",
+
+                            year:
+                                "numeric"
+
+                        }
+
+                    );
+
+
+                renderKhouzan();
+
+            }
+
+        );
+
+
+        cell.appendChild(
+            button
+        );
+
+
+        row.appendChild(
+            cell
+        );
+
+
+        if (
+
+            row.children.length ===
+            7
+
+        ) {
+
+            calendarDays.appendChild(
+                row
+            );
+
+
+            row =
+                document.createElement(
+                    "tr"
+                );
+
+        }
+
+    }
+
+
+    /*
+     * Complete final row.
+     */
+
+    while (
+
+        row.children.length > 0
+
+        &&
+
+        row.children.length < 7
+
+    ) {
+
+        row.appendChild(
+            createEmptyCell()
+        );
+
+    }
+
+
+    if (
+
+        row.children.length > 0
+
+    ) {
+
+        calendarDays.appendChild(
+            row
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   MAIN RENDER FUNCTION
+   ========================================================= */
+
+function renderCalendar() {
+
+    if (
+        showingCustom
+    ) {
+
+        renderKhouzan();
+
+    }
+
+    else {
+
+        renderGregorian();
+
+    }
+
+}
+
+/* =========================================================
+   KHOUZAN MONTH NAVIGATION
+   ========================================================= */
+
+function getKhouzanMonthCount(
+    gregorianYear
+) {
+
+    if (
+        isLeapYear(
+            gregorianYear
+        )
+    ) {
+
+        return 6;
+
+    }
+
+
+    return 5;
+
+}
+
+
+/* =========================================================
+   PREVIOUS KHOUZAN MONTH
+   ========================================================= */
+
+function previousKhouzanMonth() {
+
+    const current =
+        gregorianToKhouzan(
+            displayedDate
+        );
+
+
+    let newMonthIndex =
+        current.monthIndex - 1;
+
+
+    let newGregorianYear =
+        current.gregorianYear;
+
+
+    if (
+        newMonthIndex < 0
+    ) {
+
+        newGregorianYear--;
+
+
+        newMonthIndex =
+
+            getKhouzanMonthCount(
+                newGregorianYear
+            )
+
+            - 1;
+
+    }
+
+
+    displayedDate =
+        khouzanToGregorian(
+
+            newGregorianYear,
+
+            newMonthIndex,
+
+            1
+
+        );
+
+}
+
+
+/* =========================================================
+   NEXT KHOUZAN MONTH
+   ========================================================= */
+
+function nextKhouzanMonth() {
+
+    const current =
+        gregorianToKhouzan(
+            displayedDate
+        );
+
+
+    let newMonthIndex =
+        current.monthIndex + 1;
+
+
+    let newGregorianYear =
+        current.gregorianYear;
+
+
+    if (
+
+        newMonthIndex >=
+
+        getKhouzanMonthCount(
+            newGregorianYear
+        )
+
+    ) {
+
+        newMonthIndex =
+            0;
+
+
+        newGregorianYear++;
+
+    }
+
+
+    displayedDate =
+        khouzanToGregorian(
+
+            newGregorianYear,
+
+            newMonthIndex,
+
+            1
+
+        );
+
+}
+
+
+/* =========================================================
+   PREVIOUS BUTTON
+   ========================================================= */
+
+previousMonth.addEventListener(
+
+    "click",
+
+    function() {
+
+        if (
+            showingCustom
+        ) {
+
+            previousKhouzanMonth();
+
+        }
+
+        else {
+
+            displayedDate.setMonth(
+
+                displayedDate.getMonth()
+                - 1
+
+            );
+
+        }
+
+
+        renderCalendar();
+
+    }
+
+);
+
+
+/* =========================================================
+   NEXT BUTTON
+   ========================================================= */
+
+nextMonth.addEventListener(
+
+    "click",
+
+    function() {
+
+        if (
+            showingCustom
+        ) {
+
+            nextKhouzanMonth();
+
+        }
+
+        else {
+
+            displayedDate.setMonth(
+
+                displayedDate.getMonth()
+                + 1
+
+            );
+
+        }
+
+
+        renderCalendar();
+
+    }
+
+);
+
+
+/* =========================================================
+   FLIP CALENDAR
+   ========================================================= */
+
+flipButton.addEventListener(
+
+    "click",
+
+    function() {
+
+        showingCustom =
+            !showingCustom;
+
+
+        /*
+         * Preserve the currently
+         * selected Gregorian date.
+         */
+
+        displayedDate =
+            new Date(
+                selectedDate
+            );
+
+
+        if (
+            showingCustom
+        ) {
+
+            flipButton.textContent =
+                "Show Gregorian Calendar";
+
+        }
+
+        else {
+
+            flipButton.textContent =
+                "Show Khouzan Calendar";
+
+        }
+
+
+        renderCalendar();
+
+    }
+
+);
+
+
+/* =========================================================
+   START CALENDAR
+   ========================================================= */
+
+renderCalendar();
+
+
+</script>
