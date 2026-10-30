@@ -1,75 +1,137 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>ibarkback.org</title>
+  <meta charset="UTF-8">
+  <title>ibarkback.org</title>
+  <style>
+    /* Global Styles */
+    html {
+      scroll-behavior: smooth;
+    }
 
-<style>
-/* Page spacing */
-body {
-  margin: 20px ;
-  font-family: Courier New; 
-  background-image: url(/img/IMG_0519.JPG);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size:cover;
-} 
+    body {
+      margin: 20px;
+      background-image: url("/img/background.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: repeat;
+      font-family: 'Courier New', Courier, monospace;
+    }
 
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
-}
+    /* Navigation Layout Wrapper */
+    .nav-container {
+      position: relative;
+      margin-top: 50px;
+      margin-bottom: 20px;
+      margin-left: 20px; /* Aligns layout with the body margin */
+    }
 
-/* classes */
-.box { 
-  background-color: rgb(170, 201, 126);
-  width: 50%;
-  margin: 0 auto;
-}
+    /* Header Bar */
+    .header {
+      height: 17px;
+      background-color: #0a0a0a;
+      display: flex;
+      justify-content: space-between;
+      padding: 5px;
+      margin-left: 50px; /* Offsets bar slightly behind the logo */
+    }
 
-.text { 
-  margin: 20px;
-}
+    .header a {
+      text-decoration: none;
+      color: #f6ce14;
+    }
 
-.list {
-  padding: 10px;
-  text-align: center;
-  display: flex;
-  gap: 20px;
-  align-items: flex-end;
-  justify-content: center;
-}
+    /* Pushes 'blog' out from behind the 180px logo */
+    .header .first-link {
+      margin-left: 150px; 
+    }
 
-.gallery-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
+    .logo-oval {
+      position: absolute;
+      top: -43px; /* Vertical center alignment relative to the 17px bar */
+      left: 0;    /* Flush left alignment */
+      z-index: 10;
+      width: 180px;
+      height: 110px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid #888;
+      background: linear-gradient(
+        to bottom,
+        #ffffff 0%,
+        #d9d9d9 25%,
+        #a6a6a6 50%,
+        #eeeeee 75%,
+        #999999 100%
+      );
+      box-shadow:
+        0 3px 6px rgba(0, 0, 0, 0.35),
+        inset 0 2px 3px rgba(255, 255, 255, 0.95),
+        inset 0 -3px 5px rgba(0, 0, 0, 0.3);
+    }
 
-.gallery-card img {
-  height: 150px; 
-  width: auto;
-  object-fit: contain;
-}
+    .logo-oval img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
 
-</style>
+    .logo-oval::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      pointer-events: none;
+      background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.75) 0%,
+        rgba(255, 255, 255, 0.25) 25%,
+        transparent 52%,
+        rgba(0, 0, 0, 0.08) 100%
+  );
+      box-shadow:
+        inset 0 2px 2px rgba(255, 255, 255, 0.9),
+        inset 0 -2px 3px rgba(0, 0, 0, 0.25);
+    }
 
-<div class="box">
-    <div><img src="/img/barkbacklogo.png" style="height: 50px; margin: auto 0; justify-content: center;"></div>
-    <div style="text-align: center;"><b><u>ibarkback.org</u></b></div>
-    <div class="text">welcome to my blog! click <a href="/about.html">here</a> for a backstory on the name and purpose of the site. Below are links to site subcatergories! thanks for visiting!</div>
-    <div class="list">
-      <div class="gallery-card">
-        <a href="/readinglist/index.html"><img src="https://blob.gifcities.org/gifcities/XYYCUYTAEBRL5MHQ2EYHO42DFI4A3YZ2.gif"></a>
-        <div>Reading list!</div>
-      </div>
-      <div class="gallery-card">
-          <a href="/natgeo/index.html"><img src="https://i.ebayimg.com/images/g/q0IAAOSw~xRkF7Ex/s-l1200.jpg"></a>
-          <div>Nat Geo collection</div>
-      </div>
-      <div class="gallery-card">
-        <a href="/calvinvill/index.html"><img src="/img/CVcoa.png"></a>
-        <div>Calvinvill wiki!</div>
+    .box { 
+      background-color: rgb(245, 247, 242);
+      width: 50%;
+      margin: 0 auto;
+      border: #0a0a0a;
+      border-width: 1px;
+      border-style: double;
+    }
+
+    .text { 
+      margin: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="nav-container">
+    
+    <div class="header">
+      <span class="first-link"><a href="/blog/index.html">blog</a></span>
+      <span><a href="/readinglist/index.html">reading list</a></span>
+      <span><a href="/calvinvill/index.html">calvinvill wiki</a></span>
     </div>
 
+    <div class="logo-oval">
+      <a href="index.html"><img src="/img/sitelogo.png" alt="logo"></a>
+    </div>
 
+  </div>
+
+  <!-- Primary Page Body Elements -->
+  <div class="box">
+    <div class="text">
+      <!-- Your page text content goes here -->
+    </div>
+  </div>
+
+</body>
+</html>
