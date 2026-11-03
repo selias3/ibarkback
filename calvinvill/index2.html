@@ -20,83 +20,34 @@
       background-repeat: repeat;
     }
 
-/* I bark back logo*/
-    .logo-oval {
-      position: absolute;
-      top: -43px; /* Vertical center alignment relative to the 17px bar */
-      left: 0;    /* Flush left alignment */
-      z-index: 10;
-      width: 140px;
-      height: 70px;
-      border-radius: 50%;
-      overflow: hidden;
-      border: 2px solid #888;
-      background: linear-gradient(
-        to bottom,
-        #ffffff 0%,
-        #d9d9d9 25%,
-        #a6a6a6 50%,
-        #eeeeee 75%,
-        #999999 100%
-      );
-      box-shadow:
-        0 3px 6px rgba(0, 0, 0, 0.35),
-        inset 0 2px 3px rgba(255, 255, 255, 0.95),
-        inset 0 -3px 5px rgba(0, 0, 0, 0.3);
-    }
-
-    .logo-oval img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 50%;
-    }
-
-    .logo-oval::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: 50%;
-      pointer-events: none;
-      background: linear-gradient(
-        to bottom,
-        rgba(255, 255, 255, 0.75) 0%,
-        rgba(255, 255, 255, 0.25) 25%,
-        transparent 52%,
-        rgba(0, 0, 0, 0.08) 100%
-  );
-      box-shadow:
-        inset 0 2px 2px rgba(255, 255, 255, 0.9),
-        inset 0 -2px 3px rgba(0, 0, 0, 0.25);
-    }
-
 /* homepage designs */
-    .lbox { 
+.container { 
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+    .box1 { 
       background-color: #D1C4E9;
       width: 25%;
-      margin: 0 auto;
       border: #0a0a0a;
       border-width: 1px;
       border-style: solid;
       display: inline-block;
       position: static;
+      padding: 10px
     }
 
-    .box { 
+    .box2 { 
       background-color: #ffffffe9;
       width: 50%;
-      margin: 0 auto;
       border: #0a0a0a;
       border-width: 1px;
       border-style: solid;
       display: inline-block;
       position: static;
+      padding: 10px;
     }
 
-    .lbox,.box img {
-      margin: auto;
-    }
 
 /* various style elements */
 .title {
@@ -114,14 +65,14 @@
   </style>
 </head>
 <body>
-
-  <div class="lbox">
+<div class="container">
+  <div class="box">
     <div>
       <a href="index.html"><img src="images/emblem2.png" height="200" alt="Emblem"></a>
     </div>
   </div>
 
-    <div class="box">
+    <div class="box2">
       <div class="title"><b>Welcome to the official site of the <a href="PLAC.html">Public Library and Archive of Calvinvill</a></b></div>
       <div class="figcaption">Formerly known as the People's Library of Calvinvill.</div>
       <div><img src="images/cvmap.png" style="height: 300px;"></div>
