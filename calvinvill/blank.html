@@ -32,16 +32,14 @@
         font-display: swap;
     }
     
-    .khouzan-month { 
-        font-family: 'calvinese';
-        font-size: 10px
-    }
     /* containers */
     .header { 
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
+        position: relative;
+        width: 100%;
         background-color: white;
         height: 15%;
         margin: 0px;
@@ -69,6 +67,12 @@
         text-indent: 20px;
     }
 
+    /* style classes (unrelated to containers) */
+    .khouzan-month { 
+        font-family: 'calvinese';
+        font-size: 10px
+    }
+
 </style>
 </head>
 
@@ -76,13 +80,17 @@
 <div class="header">
     <div><a href="index.html"><img src="images/emblem2.png" height="125"></a></div>
     <div class="datetxt">
-        <div id="customDateScript"></div>
         <div id="customDate"></div>
+        <div id="customDateScript"></div>
         <div id="gregorianDate"></div>
     </div>
 </div>
 
 <h2>[article title]</h2>
+
+
+
+
 
 
 <script>
