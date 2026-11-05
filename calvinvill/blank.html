@@ -6,6 +6,7 @@
 <title>[page title]</title>
 
 <style>
+    /* global ops */
     html {
       scroll-behavior: smooth;
     }
@@ -25,6 +26,17 @@
     border-style: ridge;
     }
 
+    @font-face {
+        font-family: 'calvinese';
+        src: url(/calvinvill/Calvinese4.woff);
+        font-display: swap;
+    }
+    
+    .khouzan-month { 
+        font-family: 'calvinese';
+        font-size: 10px
+    }
+    /* containers */
     .header { 
         display: flex;
         flex-direction: row;
@@ -37,8 +49,8 @@
 
     .datetxt { 
         position: absolute;
-        right: 0;
-        top: 10%;
+        right: 2%;
+        top: 12%;
         text-align: right;
         font-size: 10px;
         font-family: Georgia, 'Times New Roman', Times, serif;
@@ -74,63 +86,62 @@
 
 <script>
         /* khouzan date */
-        const MONTH_NAMES = [
-            'siahpiare',   // ← your 1st month
-            'ahpiar',   // ← your 2nd month
-            'eliou', // ← your 3rd month
-            'tsipeti',  // ← your 4th month
-            "di'si'"  // ← your 5th month
-        ];
-        const DAYS_PER_MONTH = 73;
-        const DAYS_PER_YEAR  = 365;   // 5 × 73
-        const YEAR_OFFSET    = 4334;
+          const MONTH_NAMES = [
+    'siahpiare',
+    'ahpiar',
+    'eliou',
+    'tsipeti',
+    "di'si"
+  ];
+  const DAYS_PER_MONTH = 73;
+  const DAYS_PER_YEAR  = 365;   // 5 × 73
+  const YEAR_OFFSET    = 4334;
 
-        // Anchor: Gregorian 2000-01-01 = Your Year 1, Month 1, Day 1 (pre-offset)
-        const EPOCH_GREGORIAN = Date.UTC(2000, 0, 1);
-        const MS_PER_DAY = 86400000;
+  const EPOCH_GREGORIAN = Date.UTC(2000, 0, 1);
+  const MS_PER_DAY = 86400000;
 
-        function toCustomCalendar(date) {
-            const daysSinceAnchor = Math.floor(
-            (Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()) - EPOCH_GREGORIAN)
-            / MS_PER_DAY
-            );
+  function toCustomCalendar(date) {
+    // Days elapsed since Jan 1, 2000 — used only for month/day-of-year
+    const daysSinceAnchor = Math.floor(
+      (Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()) - EPOCH_GREGORIAN)
+      / MS_PER_DAY
+    );
 
-            const isBeforeEpoch = daysSinceAnchor < 0;
-            const absDays = Math.abs(daysSinceAnchor);
+    // Day within the current 365-day cycle, 0-based
+    const dayOfYear = ((daysSinceAnchor % DAYS_PER_YEAR) + DAYS_PER_YEAR) % DAYS_PER_YEAR;
 
-            const yearIdx   = Math.floor(absDays / DAYS_PER_YEAR);
-            const dayOfYear = absDays % DAYS_PER_YEAR;
-            const monthIdx  = Math.floor(dayOfYear / DAYS_PER_MONTH);
-            const day       = (dayOfYear % DAYS_PER_MONTH) + 1;
+    const monthIdx = Math.floor(dayOfYear / DAYS_PER_MONTH);
+    const day      = (dayOfYear % DAYS_PER_MONTH) + 1;
 
-            const baseYear = isBeforeEpoch ? -(yearIdx) : yearIdx + 1;
+    return {
+      year:      date.getFullYear() + YEAR_OFFSET,
+      day:       day,
+      monthName: MONTH_NAMES[monthIdx]
+    };
+  }
 
-            return {
-            year:      baseYear + YEAR_OFFSET,
-            day:       day,
-            monthName: MONTH_NAMES[monthIdx]
-            };
-        }
+  function formatCustom(c) {
+    return `${c.day} ${c.monthName} ${c.year}`;
+  }
 
-        // Format: "XX MonthName XXXX"
-        function formatCustom(c) {
-            return `${c.day} ${c.monthName} ${c.year}`;
-        }
+  function formatGregorian(d) {
+    return d.toLocaleDateString('en-US', {
+      weekday: 'long',
+      year:    'numeric',
+      month:   'long',
+      day:     'numeric'
+    });
+  }
 
-        // Format: "Thursday, November 5, 2026"
-        function formatGregorian(d) {
-            return d.toLocaleDateString('en-US', {
-            weekday: 'long',
-            year:    'numeric',
-            month:   'long',
-            day:     'numeric'
-            });
-        }
+  const now = new Date();
+  document.getElementById('gregorianDate').textContent = formatGregorian(now);
+  document.getElementById('customDate').textContent    = formatCustom(toCustomCalendar(now));
 
-        // ---- Render both ----
-        const now = new Date();
-        document.getElementById('gregorianDate').textContent = formatGregorian(now);
-        document.getElementById('customDate').textContent    = formatCustom(toCustomCalendar(now));
+  // Styled month line: same date, month uppercased, in custom font
+const c = toCustomCalendar(now);
+document.getElementById('customDateScript').innerHTML =
+  `${c.day} <span class="khouzan-month">${c.monthName.toUpperCase()}</span> ${c.year}`;
+
 
 </script>
 </body>
