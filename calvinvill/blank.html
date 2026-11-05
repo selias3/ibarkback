@@ -46,7 +46,28 @@
     }
 </style>
 
-<body>
+<script>
+    /* date */
+    const dateEl = document.getElementById('date');
+    const now = new Date();
+    dateEl.textContent = now.toLocaleDateString('en-US', {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
 
+</script>
+
+
+<body>
+<div class="header">
+    <div><a href="index.html"><img src="images/emblem2.png" height="125"></a></div>
+    <div class="headertxt">
+        <span id="date"></span>
+    </div>
+</div>
+
+<div class="bar"></div>
     
 </body>
