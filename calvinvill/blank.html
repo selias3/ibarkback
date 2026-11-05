@@ -126,39 +126,60 @@
         z-index: 1;
     }
 
-    .Rbox { 
-        position: relative;
-        right: 2%;
-        left: 78%;
-        background-color: lightblue;
-        display: flex;
-        flex-direction: column;
-        z-index: 2;
+    /* infobox */
+    .box {
+    width: 300px;
+    float: right;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    background: #ffffff;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 10px 0;
     }
 
-    .awards { 
-        position: relative;
-        top: 2%;
-        right: 98%;
-        bottom: 7%;
-        left: 2%;
-        background-color: olive; 
-        display: inline-block;
-        justify-content: center;
-        z-index: 3;
+    .box h1 {
+        text-align: center;
+        font-size:16px;
     }
 
-    .infobox { 
-        position: relative;
-        top: 9%;
-        right: 98%;
-        left: 2%;
-        display: flex;
-        flex-direction: column;
-        background-color: #e4dcf3;
-        z-index: 3;
+    /* h2 should only be used when implementing a background color*/
+    .box h2 { 
+    background-color: #D1C4E9;
+    text-align: center;
+    font-size: 14px;
+    } 
+    
+    .subcatergories { 
+        font-size: 12px;
+        width: 95%;
+        vertical-align: top;
+    }
+
+    .subcatergories td {
+        padding-left: 30px;
+    }
+    .subcatergories th {
+        vertical-align: top;
+        text-align: left;
+        padding-left: 30px;
+    }
 
 
+
+    /* Figure styling */
+    .box img {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+    }
+
+    .box figcaption {
+    font-size: 12px;
+    text-align: center;
+    margin-top: 2px;
     }
 
     /* style classes (unrelated to containers) */
@@ -200,20 +221,88 @@
         <div><a href="index.html">Site 3</a></div>
     <br>
     <figure>
-        <figcaption>Powered by:</figcaption>
-        <a href="/index.html"><img src="/img/barkbacklogo.png" style="height: 30px;"></a>
+        <div><i>Powered by:</i></div>
+        <a href="/index.html"><img src="/img/barkbacklogo.png" style="height: 60px;"></a>
     </figure>
     </div>
 
     <div class="contents">
-        <div class="Rbox">
-            <div class="awards">
-                <figure><img src="/readinglist/images/Favstamp.png" style="height: 20px;"></figure>
+        <div class="box">
+            <h1>Igor Ratshinikov</h1>
+            <div class="intext">
+                <img src="images/ratshinikov.JPG" alt="Portrait" >
+                <figcaption>Ratshinikov in 2009</figcaption>
             </div>
-            <div class="infobox">
-
-            </div>
-
+            <h2>Personal details</h2>
+            <table class="subcatergories">
+                <tr>
+                    <th>Born</th>
+                    <td>
+                        <div>May 1 2000 (current age)</div>
+                        <div>47 ahpiar 6334</div>
+                        <div>Astoria, Gatwick Province, <a href="Zhestikray.html">Zhestikray</a></div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Died</th>
+                    <td>
+                        <div>May 2 2000 (age)</div>
+                        <div>48 ahpiar 6334</div>
+                        <div>Desert City, Khouza</div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Spouse</th>
+                    <td>
+                        <div>Firstname Lastname</div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Children</th>
+                    <td>
+                        <div>Firstname Lastname</div>
+                        <div>Firstname Lastname</div>
+                        <div>Firstname Lastname</div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Education</th>
+                    <td>
+                        <div>Huntley Meadows Academy</div>
+                        <div>Calvinvill State University, B.A.</div>
+                        <div>Mueller College, PhD</div>
+                    </td>
+                </tr>
+                </table>
+        <!--add additional sections here. If held an important position, such as president or leader of something include here-->
+            <h2>Suzerain of Calvinvill</h2>		
+            <table class="subcatergories">
+                    <th style= text-align:center; colspan="2">In office</th>
+                    <tr>
+                        <td style= text-align:center; colspan="2">
+                            <div>May 1 2000 - April 16 2006</div>
+                            <div>47 ahpiar 6334 - 35 ahpiar 6340</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Second in Command</th>
+                        <td>
+                            <div>Firstname Lastname</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Preceded by</th>
+                        <td>
+                            <div>Firstname Lastname</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Succeeded by</th>
+                        <td>
+                            <div>Firstname Lastname</div>
+                        </td>
+                    </tr>
+            </table>
         </div>
     </div>
 
