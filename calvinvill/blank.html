@@ -35,8 +35,11 @@
         margin: 0px;
     }
 
-    .headertxt { 
-        text-align: left;
+    .datetxt { 
+        justify-content: right;
+        text-align: right;
+        font-size: 10px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
         margin: 10px;
     }
 
@@ -46,7 +49,13 @@
         padding-bottom: 0;
         padding-top: 0;
         font-family: Georgia, 'Times New Roman', Times, serif;
-        height: 20px;
+        height: 24px;
+    }
+
+    .bar p {
+        font-size: 24;
+        font-style: bold;
+        margin-left: 10px;
     }
 </style>
 </head>
@@ -54,12 +63,14 @@
 <body>
 <div class="header">
     <div><a href="index.html"><img src="images/emblem2.png" height="125"></a></div>
-    <div class="headertxt">
+    <div class="datetxt">
         <div><span id="date"></span></div>
     </div>
 </div>
 
-<div class="bar"></div>
+<div class="bar">
+    <p>[article title]</p>
+</div>
 
 
 <script>
