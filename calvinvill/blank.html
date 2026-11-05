@@ -101,6 +101,13 @@
         border-left: 1px;
         border-left-style: solid;
         border-left-color: #ccc;
+        flex-grow: 1;
+    }
+
+    .infobox { 
+        position: absolute;
+        right: 0;
+
     }
 
     /* style classes (unrelated to containers) */
@@ -129,14 +136,24 @@
       <div><a href="index.html">Homepage</a></div>
       <div><a href="contents.html">Site contents</a></div>
       <div><a href="#" onclick="randomPage(); return false;">Random page</a></div>
-      <hr>
+      <br>
       <div><b>Article contents</b></div>
-        <div><a href="index.html">Homepage</a></div>
+        <div><a href="#anchor1">Background/Early life</a></div>
+        <div><a href="#anchor2">Background/Early life</a></div>
+        <div><a href="#anchor3">Background/Early life</a></div>
 
     </div>
 
+    <div class="infobox">
+
+    </div>
+
+
     
     <div class="contents">
+
+
+
         <P> this is the start of the article.</P>
     </div>
 
