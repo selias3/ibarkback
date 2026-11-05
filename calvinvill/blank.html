@@ -1,19 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <script>
-        /* date */
-        const dateEl = document.getElementById('date');
-        const now = new Date();
-        dateEl.textContent = now.toLocaleDateString('en-US', {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-        });
 
-    </script>
-</head>
+<head>
 <meta charset="UTF-8">
 <title>[page title]</title>
 
@@ -23,6 +11,7 @@
     }
 
     body {
+        margin: 0px;
       background-image: url("/img/background.png");
       background-size: cover;
       background-position: center;
@@ -58,6 +47,7 @@
         height: 20px;
     }
 </style>
+</head>
 
 <body>
 <div class="header">
@@ -68,6 +58,19 @@
 </div>
 
 <div class="bar"></div>
-    
+
+
+<script>
+        /* date */
+        const dateEl = document.getElementById('date');
+        const now = new Date();
+        dateEl.textContent = now.toLocaleDateString('en-US', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+        });
+
+</script>
 </body>
 
