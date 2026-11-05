@@ -38,7 +38,7 @@
     .datetxt { 
         position: absolute;
         right: 0;
-        bottom: 10px;
+        top: 10%;
         text-align: right;
         font-size: 10px;
         font-family: Georgia, 'Times New Roman', Times, serif;
@@ -64,6 +64,7 @@
 <div class="header">
     <div><a href="index.html"><img src="images/emblem2.png" height="125"></a></div>
     <div class="datetxt">
+        <div><span id="customDate"></span></div>
         <div><span id="date"></span></div>
     </div>
 </div>
@@ -82,7 +83,64 @@
         day: 'numeric'
         });
 
-        
+        /* khouzan date */
+        const MONTH_NAMES = [
+            'siahpiare',   // ← your 1st month
+            'ahpiar',   // ← your 2nd month
+            'eliou', // ← your 3rd month
+            'tsipeti',  // ← your 4th month
+            'di'si''   // ← your 5th month
+        ];
+        const DAYS_PER_MONTH = 73;
+        const DAYS_PER_YEAR  = 365;   // 5 × 73
+        const YEAR_OFFSET    = 4334;
+
+        // Anchor: Gregorian 2000-01-01 = Your Year 1, Month 1, Day 1 (pre-offset)
+        const EPOCH_GREGORIAN = Date.UTC(2000, 0, 1);
+        const MS_PER_DAY = 86400000;
+
+        function toCustomCalendar(date) {
+            const daysSinceAnchor = Math.floor(
+            (Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()) - EPOCH_GREGORIAN)
+            / MS_PER_DAY
+            );
+
+            const isBeforeEpoch = daysSinceAnchor < 0;
+            const absDays = Math.abs(daysSinceAnchor);
+
+            const yearIdx   = Math.floor(absDays / DAYS_PER_YEAR);
+            const dayOfYear = absDays % DAYS_PER_YEAR;
+            const monthIdx  = Math.floor(dayOfYear / DAYS_PER_MONTH);
+            const day       = (dayOfYear % DAYS_PER_MONTH) + 1;
+
+            const baseYear = isBeforeEpoch ? -(yearIdx) : yearIdx + 1;
+
+            return {
+            year:      baseYear + YEAR_OFFSET,
+            day:       day,
+            monthName: MONTH_NAMES[monthIdx]
+            };
+        }
+
+        // Format: "XX MonthName XXXX"
+        function formatCustom(c) {
+            return `${c.day} ${c.monthName} ${c.year}`;
+        }
+
+        // Format: "Thursday, November 5, 2026"
+        function formatGregorian(d) {
+            return d.toLocaleDateString('en-US', {
+            weekday: 'long',
+            year:    'numeric',
+            month:   'long',
+            day:     'numeric'
+            });
+        }
+
+        // ---- Render both ----
+        const now = new Date();
+        document.getElementById('gregorianDate').textContent = formatGregorian(now);
+        document.getElementById('customDate').textContent    = formatCustom(toCustomCalendar(now));
 
 </script>
 </body>
