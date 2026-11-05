@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>
+        /* date */
+        const dateEl = document.getElementById('date');
+        const now = new Date();
+        dateEl.textContent = now.toLocaleDateString('en-US', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+        });
+
+    </script>
+</head>
 <meta charset="UTF-8">
 <title>[page title]</title>
 
@@ -28,7 +41,7 @@
         justify-content: center;
         background-color: white;
         height: 15%;
-        margin: 0;
+        margin: 0px;
     }
 
     .headertxt { 
@@ -46,20 +59,6 @@
     }
 </style>
 
-<script>
-    /* date */
-    const dateEl = document.getElementById('date');
-    const now = new Date();
-    dateEl.textContent = now.toLocaleDateString('en-US', {
-      weekday: 'long',
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    });
-
-</script>
-
-
 <body>
 <div class="header">
     <div><a href="index.html"><img src="images/emblem2.png" height="125"></a></div>
@@ -71,3 +70,4 @@
 <div class="bar"></div>
     
 </body>
+
