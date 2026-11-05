@@ -76,6 +76,8 @@
         width: 15%;
         background-color: transparent;
         position: absolute;
+        left: 0;
+        top: 15%;
         margin-left: 5%;
         margin-top: 0;
         margin-right: 0;
@@ -88,6 +90,8 @@
     .contents {
         width: 85%;
         position: absolute;
+        left: 15%;
+        top: 15%;
         margin-right: 5%;
         margin-bottom: 5%;
         margin-left: 0;
@@ -122,8 +126,15 @@
 
 <div class="main">
     <div class="Lbox">
+      <div><a href="index.html">Homepage</a></div>
+      <div><a href="contents.html">Site contents</a></div>
+      <div><a href="#" onclick="randomPage(); return false;">Random page</a></div>
+      <hr>
+      <div><b>Article contents</b></div>
+        <div><a href="index.html">Homepage</a></div>
 
     </div>
+
     
     <div class="contents">
 
@@ -135,7 +146,7 @@
 
 
 <script>
-        /* khouzan date */
+        /* header date */
           const MONTH_NAMES = [
     'siahpiare',
     'ahpiar',
@@ -193,6 +204,20 @@ document.getElementById('customDateScript').innerHTML =
   `${c.day} <span class="khouzan-month">${c.monthName.toUpperCase()}</span> ${c.year}`;
 
 
+</script>
+
+<script>
+/* random page generator */
+async function randomPage() {
+    try {
+        const res = await fetch('pages.json');
+        const pages = await res.json();
+        const pick = pages[Math.floor(Math.random() * pages.length)];
+        window.location.href = pick;
+    } catch (e) {
+        console.error('Could not load pages.json', e);
+    }
+}
 </script>
 </body>
 

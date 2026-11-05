@@ -89,18 +89,16 @@ img {
 </head>
 
 <script>
-        const pages = [
-            "calvinese.html",
-            "cnbl.html",
-            "IgorRatshinikov.html",
-            "khouzancalendar.html",
-            "history6.html",
-        ];
-
-        function randomPage() {
-            const randomIndex = Math.floor(Math.random() * pages.length);
-            window.location.href = pages[randomIndex];
-        }
+async function randomPage() {
+    try {
+        const res = await fetch('pages.json');
+        const pages = await res.json();
+        const pick = pages[Math.floor(Math.random() * pages.length)];
+        window.location.href = pick;
+    } catch (e) {
+        console.error('Could not load pages.json', e);
+    }
+}
 </script>
 
 <body>
