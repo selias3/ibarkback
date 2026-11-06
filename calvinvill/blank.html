@@ -125,6 +125,28 @@
         z-index: 1;
     }
 
+    .info { 
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        left: 2%;
+        right: 98%;
+        top: 2%;
+        bottom: 98%;
+        background-color: #D1C4E9;
+    }
+
+    .awards { 
+        display: inline-block;
+        flex-direction: row-reverse;
+        position: relative;
+        left: 2%;
+        right: 98%;
+        top: 0%;
+        bottom: 5%;
+        background-color: beige;
+    }
+
     /* infobox */
     .box {
     width: 300px;
@@ -145,8 +167,8 @@
         font-size:16px;
     }
 
-    /* h2 should only be used when implementing a background color*/
-    .box h2 { 
+    /* h3 should only be used when implementing a background color*/
+    .box h3 { 
     background-color: #D1C4E9;
     text-align: center;
     font-size: 14px;
@@ -225,6 +247,8 @@
     </div>
 
     <div class="contents">
+        <div class="info">
+            <div class="awards"></div>
         <div class="box">
             <h1>Igor Ratshinikov</h1>
             <div class="intext">
@@ -303,7 +327,6 @@
             </table>
         </div>
     </div>
-    <div>this is the start of the article</div>
 </div>
 
 
