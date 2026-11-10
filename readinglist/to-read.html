@@ -122,17 +122,99 @@ table {
 ul {
 	margin-bottom: 10px;
 }
+
+.nav-container {
+      position: relative;
+      margin-top: 50px;
+      margin-bottom: 30px;
+      margin-left: 20px; 
+    }
+
+    .header {
+      height: 17px;
+      background-color: #0039a3;
+      display: flex;
+      justify-content: space-between;
+      padding: 5px;
+      margin-left: 50px; 
+    }
+
+    .header a {
+      text-decoration: none;
+      color: white;
+    }
+
+    .header .first-link {
+      margin-left: 150px; 
+    }
+
+    .logo-oval {
+      position: absolute;
+      top: -43px; 
+      left: 0;   
+      z-index: 10;
+      width: 180px;
+      height: 110px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid #888;
+      background: linear-gradient(
+        to bottom,
+        #ffffff 0%,
+        #d9d9d9 25%,
+        #a6a6a6 50%,
+        #eeeeee 75%,
+        #999999 100%
+      );
+      box-shadow:
+        0 3px 6px rgba(0, 0, 0, 0.35),
+        inset 0 2px 3px rgba(255, 255, 255, 0.95),
+        inset 0 -3px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .logo-oval img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .logo-oval::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      pointer-events: none;
+      background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.75) 0%,
+        rgba(255, 255, 255, 0.25) 25%,
+        transparent 52%,
+        rgba(0, 0, 0, 0.08) 100%
+  );
+      box-shadow:
+        inset 0 2px 2px rgba(255, 255, 255, 0.9),
+        inset 0 -2px 3px rgba(0, 0, 0, 0.25);
+    }
 </style>
 </head>
 
 <body style="background-color:#C9DCFF;">
 
-<div class="header">
-  <span><a href="index.html">calvin's reading list</a></span>
-  <span><a href="to-read.html">to-read</a></span>
-  <span><a href="collection.html">collection</a></span>
-  <span><a href="bookmarks.html">bookmarks!</a></span>
-  <span><a href="2025.html">2025</a></span>
+<div class="nav-container">
+    <div class="header">
+      <span class="first-link"><a href="index.html">calvin's reading list</a></span>
+	  	<span><a href="to-read.html">to-read</a></span>
+		<span><a href="collection.html">collection</a></span>
+		<span><a href="favorites.html">favorites!</a></span>
+		<span><a href="archive.html">archive</a></span>
+	</div>
+
+	<div class="logo-oval">
+      <a href="/index.html"><img src="images/ibblogoread.png" alt="logo"></a>
+    </div>
+
 </div>
 
 <div class="container">
@@ -144,6 +226,13 @@ ul {
 				<ul>
 					<li style="font-size: 20px;"><a href="https://en.wikipedia.org/wiki/Conrad_Aiken">Aiken, Conrad</a></li>
 				</ul> 
+
+				<ul>
+					<li style="font-size: 20px"><a href="https://en.wikipedia.org/wiki/Dorothy_Allison">Allison, Dorothy</a></li>
+					<ol> 
+							<li><u>Bastard Out of Carolina</u> (1992)</li>
+						</ol>
+				</ul>
 
 				<ul>
 					<li style="font-size: 20px"><a href="https://en.wikipedia.org/wiki/Samuel_Beckett">Beckett, Samuel</a></li>
@@ -188,6 +277,10 @@ ul {
 							<li class="poetry"><u>White Buildings</u> (1926)</li>
 							<li class="poetry"><u>The Bridge</u> (1930)</li>
 						</ol>
+				</ul>
+
+				<ul>
+					<li style="font-size: 20px"><a href="https://en.wikipedia.org/wiki/Harry_Crews">Crews, Harry</a></li>
 				</ul>
 				
 				<ul>
@@ -273,6 +366,10 @@ ul {
 				</ul-->
 				
 				<ul>
+					<li style="font-size: 20px"><a href="https://en.wikipedia.org/wiki/Barry_Hannah">Hannah, Barry</a></li>
+				</ul>
+
+				<ul>
 					<li style="font-size: 20px"><a href="https://en.wikipedia.org/wiki/Ernest_Hemmingway">Hemmingway, Ernest</a></li>
 						<ol>
 							<li><u>The Sun Also Rises</u> (1926)</li>
@@ -348,6 +445,14 @@ ul {
 					<li style="font-size: 20px"><a href="https://en.wikipedia.org/wiki/Hiroko_Oyamada">Oates, Joyce Carol</a></li>
 						<ol>
 							<li><u>Black Water</u> (1992)</li>
+						</ol>
+				</ul>
+
+				<ul>
+					<li style="font-size: 20px"><a href="https://en.wikipedia.org/wiki/Flannery_O'Connor">O'Connor, Flannery</a></li>
+						<ol>
+							<li><u>Wise Blood</u>(1952)</li>
+							<li><u>The Violent Bear it Away</u>(1960)</li>
 						</ol>
 				</ul>
 
