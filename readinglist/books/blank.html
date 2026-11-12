@@ -94,10 +94,6 @@ html {
 
 /*body containers */
 .container {
-  display: flex;
-  justify-content: left;
-  flex-direction: row;
-  align-items: flex-start;
   position: relative;
   margin-top: 50px;
   margin-left: 20px;
@@ -105,8 +101,8 @@ html {
   padding: 5px;
 }
 
-/* table attributes*/
 
+/* table attributes*/
 .book-images {
     margin-left: auto;
     margin-right: auto;
@@ -170,79 +166,82 @@ padding-left: 10px;
   </div>
 
   <div class="logo-oval">
-    <a href="/index.html"><img src="images/ibblogoread.png" alt="logo"></a>
+    <a href="/index.html"><img src="/images/ibblogoread.png" alt="logo"></a>
   </div>
 </div>
 
 <body>
-    <div> 
-	<table class="book-images">
-		<tr>
-			<td><img src="images/lonelyheartscover.JPG"></td>
-			<td><img src="images/lonelyheartsback.JPG"></td>
-		</tr>
-	</table>
-</div>
-</br> 
-<div>
-	<table class="book-title">
-		<tr class="section-title">
-			<td><b><u> Title</u></b></td>
-		</tr>
-		<tr>
-			<td> By Author</td>
-		</tr>
-	</table>	
-</div>
-</br>
-<div> 
-	<table class="book-info"> 
-		<tr>
-			<td><b>First published:</b></td>
-			<td>1946</td>
-			<td><b>Edition copyright:</b></td>
-			<td>1969</td>
-		</tr>
-		<tr>
-			<td><b>Publisher:</b></td>
-			<td>New Directions</td>
-			<td><b>Purchased:</b></td>
-			<td>Bookmans Tucson</td>
-		</tr>
-		<tr>
-			<td><b>Bookmark:</b></td>
-			<td>Owl</td>
-			<td><b># of pages:</b></td>
-			<td>184</td>
-		</tr>
-		<tr>
-			<td><b>Started:</b></td>
-			<td>09/13/26</td>
-			<td><b>Finished:</b></td>
-			<td>09/21/26</td>
-		</tr>
-	</table>
-</div>
-</br> 
+    <div class="container">
+        <div> 
+            <table class="book-images">
+                <tr>
+                    <td><img src="images/lonelyheartscover.JPG"></td>
+                    <td><img src="images/lonelyheartsback.JPG"></td>
+                </tr>
+            </table>
+        </div>
+    </br> 
+        <div>
+            <table class="book-title">
+                <tr class="section-title">
+                    <td><b><u> Title</u></b></td>
+                </tr>
+                <tr>
+                    <td> By Author</td>
+                </tr>
+            </table>	
+        </div>
+    </br>
+        <div> 
+            <table class="book-info"> 
+                <tr>
+                    <td><b>First published:</b></td>
+                    <td>1946</td>
+                    <td><b>Edition copyright:</b></td>
+                    <td>1969</td>
+                </tr>
+                <tr>
+                    <td><b>Publisher:</b></td>
+                    <td>New Directions</td>
+                    <td><b>Purchased:</b></td>
+                    <td>Bookmans Tucson</td>
+                </tr>
+                <tr>
+                    <td><b>Bookmark:</b></td>
+                    <td>Owl</td>
+                    <td><b># of pages:</b></td>
+                    <td>184</td>
+                </tr>
+                <tr>
+                    <td><b>Started:</b></td>
+                    <td>09/13/26</td>
+                    <td><b>Finished:</b></td>
+                    <td>09/21/26</td>
+                </tr>
+            </table>
+        </div>
+    </br> 
 
-<!--div class="section-title"><u>The Day of the Locust</u></div--> <!--only use this if there are multiple stories/essays/books-->
+        <!--div class="section-title"><u>The Day of the Locust</u></div--> <!--only use this if there are multiple stories/essays/books-->
 
-<div class="text">
-	<!--table>
-		<tr class="section-title">
-			<td><b>Blurb!</b><span class="subtext">verbatim from the back cover</span></td>	
-		</tr> 
-	</table-->
-	<table>
-		<tr class="section-title">
-			<td><b>Notes & quotes</b><span class="subtext"> I try to include anything I underline</span></td>	
-		</tr>
-	</table>
-	<p>insert text here </p>
-    <!--table>
-		<tr class="section-title">
-			<td><b>Quotes</b><span class="subtext"> I try to include anything I underline</span></td>	
-		</tr>
-	</table-->
+        <div class="text">
+            <!--table>
+                <tr class="section-title">
+                    <td><b>Blurb!</b><span class="subtext">verbatim from the back cover</span></td>	
+                </tr> 
+            </table-->
+            <table>
+                <tr class="section-title">
+                    <td><b>Notes & quotes</b><span class="subtext"> I try to include anything I underline</span></td>	
+                </tr>
+            </table>
+            <p>insert text here </p>
+            <!--table>
+                <tr class="section-title">
+                    <td><b>Quotes</b><span class="subtext"> I try to include anything I underline</span></td>	
+                </tr>
+            </table-->
+        </div>
+    </div>
 </body>
 </html>
