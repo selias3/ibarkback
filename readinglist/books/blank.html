@@ -1,0 +1,232 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CRL: <u>book title</u></title>
+
+<style>
+/* Page spacing */
+body {
+  margin: 0;
+  font-family: Courier New;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* header logo and layout */
+.header {
+  height: 17px;
+  background-color: #0039a3;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  margin-bottom: 20px;
+  margin-left: 50px;
+}
+
+.header a {
+  text-decoration: none;
+  color: white;
+}
+
+.header .first-link {
+  margin-left: 150px;
+}
+
+.nav-container {
+  position: relative;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  margin-left: 20px;
+}
+
+.logo-oval {
+  position: absolute;
+  top: -43px;
+  left: 0;
+  z-index: 10;
+  width: 180px;
+  height: 110px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #888;
+  background: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+    #d9d9d9 25%,
+    #a6a6a6 50%,
+    #eeeeee 75%,
+    #999999 100%
+  );
+  box-shadow:
+    0 3px 6px rgba(0, 0, 0, 0.35),
+    inset 0 2px 3px rgba(255, 255, 255, 0.95),
+    inset 0 -3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.logo-oval img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.logo-oval::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.75) 0%,
+    rgba(255, 255, 255, 0.25) 25%,
+    transparent 52%,
+    rgba(0, 0, 0, 0.08) 100%
+  );
+  box-shadow:
+    inset 0 2px 2px rgba(255, 255, 255, 0.9),
+    inset 0 -2px 3px rgba(0, 0, 0, 0.25);
+}
+
+/*body containers */
+.container {
+  display: flex;
+  justify-content: left;
+  flex-direction: row;
+  align-items: flex-start;
+  position: relative;
+  margin-top: 50px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 5px;
+}
+
+/* table attributes*/
+
+.book-images {
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+}
+
+.book-images td {
+    padding: 0;
+}
+
+.book-images img {
+    width: 300px;
+    display: block;
+} 
+
+.book-images .spine { 
+	width: 100px;
+} 
+
+.book-title {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.book-title td {
+    text-align: center;
+} 
+
+.book-info { 
+	margin-left: auto;
+    margin-right: auto;
+} 
+
+.book-info table { 
+	border: 1px solid black;
+}
+
+.book-info th,
+.book-info td { 
+padding-left: 10px;
+} 
+
+.section-title {
+	text-align: center;
+	margin: 10px;
+	font-size: 36px;
+} 
+
+</style>
+</head>
+
+<body>
+    <div> 
+	<table class="book-images">
+		<tr>
+			<td><img src="images/lonelyheartscover.JPG"></td>
+			<td><img src="images/lonelyheartsback.JPG"></td>
+		</tr>
+	</table>
+</div>
+</br> 
+<div>
+	<table class="book-title">
+		<tr class="section-title">
+			<td><b><u> Title</u></b></td>
+		</tr>
+		<tr>
+			<td> By Author</td>
+		</tr>
+	</table>	
+</div>
+</br>
+<div> 
+	<table class="book-info"> 
+		<tr>
+			<td><b>First published:</b></td>
+			<td>1946</td>
+			<td><b>Edition copyright:</b></td>
+			<td>1969</td>
+		</tr>
+		<tr>
+			<td><b>Publisher:</b></td>
+			<td>New Directions</td>
+			<td><b>Purchased:</b></td>
+			<td>Bookmans Tucson</td>
+		</tr>
+		<tr>
+			<td><b>Bookmark:</b></td>
+			<td>Owl</td>
+			<td><b># of pages:</b></td>
+			<td>184</td>
+		</tr>
+		<tr>
+			<td><b>Started:</b></td>
+			<td>09/13/26</td>
+			<td><b>Finished:</b></td>
+			<td>09/21/26</td>
+		</tr>
+	</table>
+</div>
+</br> 
+
+<!--div class="section-title"><u>The Day of the Locust</u></div--> <!--only use this if there are multiple stories/essays/books-->
+
+<div class="text">
+	<!--table>
+		<tr class="section-title">
+			<td><b>Blurb!</b><span class="subtext">verbatim from the back cover</span></td>	
+		</tr> 
+	</table-->
+	<table>
+		<tr class="section-title">
+			<td><b>Notes & quotes</b><span class="subtext"> I try to include anything I underline</span></td>	
+		</tr>
+	</table>
+	<p>insert text here </p>
+    <!--table>
+		<tr class="section-title">
+			<td><b>Quotes</b><span class="subtext"> I try to include anything I underline</span></td>	
+		</tr>
+	</table-->
+</body>
+</html>
