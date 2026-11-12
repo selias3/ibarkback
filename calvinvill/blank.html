@@ -18,6 +18,7 @@
         background-position: center;
         background-repeat: repeat;
         font-family: Arial, Helvetica, sans-serif;
+        font-size: 14px; /* Base font size */
     }
 
     html, body {
@@ -54,7 +55,7 @@
         position: relative;
         width: 100%;
         background-color: white;
-        height: 125px; /* Fixed height to ensure consistent spacing */
+        height: 125px; 
         margin: 0px;
     }
 
@@ -76,7 +77,7 @@
         font-weight: bold;
         display: block;
         margin: 0;
-        text-indent: 17%; /* Keeps the title aligned with the white box */
+        text-indent: 17%; 
     }
 
     /* MODERN GRID LAYOUT */
@@ -86,15 +87,16 @@
         gap: 2%; /* Gap between sidebar and content */
         width: 100%;
         box-sizing: border-box;
-        padding-right: 2%; /* Right outer margin */
+        /* Removed padding-right so .contents reaches the edge */
     }
 
     .Lbox { 
         background-color: transparent;
-        margin-left: 2%; /* Left outer margin */
-        margin-top: 20px; /* Spacing from the header */
+        margin-left: 2%; 
+        margin-top: 20px; 
         text-align: left;
-        font-size: 10px;
+        font-size: 12px; /* INCREASED FROM 10px */
+        white-space: nowrap; /* Prevents the text from shrinking/wrapping awkwardly */
     }
 
     .contents {
@@ -102,9 +104,10 @@
         border-left: 1px solid #ccc;
         border-top: 1px solid #ccc;
         min-height: 80vh;
-        margin-top: 20px; /* Spacing from the header */
+        margin-top: 20px; 
         margin-bottom: 2%;
         position: relative;
+        padding-right: 2%; /* MOVED right gap inside the box so white reaches the edge */
     }
 
     /* Forces the white box to wrap around the floated infobox */
@@ -127,7 +130,7 @@
         width: auto;         
         text-align: left;
         background-color: gold;
-        margin: 10px;        
+        margin: 10px 0 10px 10px; /* Adjusted right margin since padding-right handles the edge gap */
         padding: 10px;
         box-sizing: border-box;
     }
@@ -141,7 +144,7 @@
         background: #ffffff;
         padding: 10px;
         box-sizing: border-box;
-        margin: 10px;        
+        margin: 10px 0 10px 10px; /* Adjusted right margin to hug the inner padding */
         z-index: 2;
     }
 
