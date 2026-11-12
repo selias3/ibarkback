@@ -13,16 +13,16 @@
 
     body {
         margin: 0px;
-      background-image: url("/img/background.png");
-      background-size: cover;
-      background-position: center;
-      background-repeat: repeat;
-      font-family: Arial, Helvetica, sans-serif;
+        background-image: url("/img/background.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: repeat;
+        font-family: Arial, Helvetica, sans-serif;
     }
 
     html, body {
         max-width: 100%;
-        overflow-x: clip;
+        overflow-x: hidden;
         -webkit-text-size-adjust: 100%;
         text-size-adjust: 100%;
     }
@@ -54,7 +54,7 @@
         position: relative;
         width: 100%;
         background-color: white;
-        height: 15%;
+        height: 125px; /* Fixed height to ensure consistent spacing */
         margin: 0px;
     }
 
@@ -74,44 +74,40 @@
         padding-top: 0;
         font-family: Georgia, 'Times New Roman', Times, serif;
         font-weight: bold;
-        column-span: all;
         display: block;
         margin: 0;
-        text-indent: 17%;
+        text-indent: 17%; /* Keeps the title aligned with the white box */
     }
 
+    /* MODERN GRID LAYOUT */
     .main { 
-        display: block;       /* Forces the container to span full width so % math works */
+        display: grid;
+        grid-template-columns: 15% 1fr; /* 15% left for sidebar, rest for contents */
+        gap: 2%; /* Gap between sidebar and content */
         width: 100%;
-        position: relative;
+        box-sizing: border-box;
+        padding-right: 2%; /* Right outer margin */
     }
 
     .Lbox { 
-        width: 15%;
         background-color: transparent;
-        position: absolute;
-        left: 2%;             /* Use left instead of margin to avoid width math issues */
-        top: 15%;
-        font-size: 10px;
+        margin-left: 2%; /* Left outer margin */
+        margin-top: 20px; /* Spacing from the header */
         text-align: left;
+        font-size: 10px;
     }
 
     .contents {
-        position: absolute;
-        left: 17%;            /* 15% for Lbox + 2% gap */
-        right: 2%;            /* Stops exactly 2% from the right edge */
-        top: 15%;
-        margin-bottom: 2%;
-        margin-top: 0;
         background-color: white;
         border-left: 1px solid #ccc;
         border-top: 1px solid #ccc;
-        min-height: 100vh;
-        box-sizing: border-box; 
-        z-index: 1;
+        min-height: 80vh;
+        margin-top: 20px; /* Spacing from the header */
+        margin-bottom: 2%;
+        position: relative;
     }
 
-    /* Clearfix to force .contents to wrap around the floated infobox */
+    /* Forces the white box to wrap around the floated infobox */
     .contents::after {
         content: "";
         display: table;
@@ -128,10 +124,10 @@
 
     .awards { 
         display: block;
-        width: auto;          
+        width: auto;         
         text-align: left;
         background-color: gold;
-        margin: 10px;
+        margin: 10px;        
         padding: 10px;
         box-sizing: border-box;
     }
@@ -139,13 +135,13 @@
     /* infobox */
     .box {
         width: 300px;
-        max-width: 90%;       
+        max-width: 90%;
         float: right;
-        margin: 10px;         
         border: 1px solid #ccc;
         background: #ffffff;
         padding: 10px;
         box-sizing: border-box;
+        margin: 10px;        
         z-index: 2;
     }
 
@@ -154,7 +150,6 @@
         font-size: 16px;
     }
 
-    /* h3 should only be used when implementing a background color*/
     .box h3 { 
         background-color: #D1C4E9;
         text-align: center;
@@ -194,7 +189,7 @@
         font-family: Georgia, 'Times New Roman', Times, serif;
     }
 
-    /* style classes (unrelated to containers) */
+    /* style classes */
     .khouzan-month { 
         font-family: 'calvinese';
         font-size: 10px;
@@ -301,7 +296,6 @@
                     </td>
                 </tr>
                 </table>
-        <!--add additional sections here. If held an important position, such as president or leader of something include here-->
             <h3>Suzerain of Calvinvill</h3>		
             <table class="subcatergories">
                     <th style="text-align:center;" colspan="2">In office</th>
@@ -334,82 +328,58 @@
     </div>
 </div>
 
-
-
-
 <script>
-        /* header date */
-          const MONTH_NAMES = [
-    'siahpiare',
-    'ahpiar',
-    'eliou',
-    'tsipeti',
-    "disi"
-  ];
-  const DAYS_PER_MONTH = 73;
-  const DAYS_PER_YEAR  = 365;   // 5 × 73
-  const YEAR_OFFSET    = 4334;
+    /* header date */
+    const MONTH_NAMES = ['siahpiare', 'ahpiar', 'eliou', 'tsipeti', "disi"];
+    const DAYS_PER_MONTH = 73;
+    const DAYS_PER_YEAR  = 365;
+    const YEAR_OFFSET    = 4334;
+    const EPOCH_GREGORIAN = Date.UTC(2000, 0, 1);
+    const MS_PER_DAY = 86400000;
 
-  const EPOCH_GREGORIAN = Date.UTC(2000, 0, 1);
-  const MS_PER_DAY = 86400000;
-
-  function toCustomCalendar(date) {
-    // Days elapsed since Jan 1, 2000 — used only for month/day-of-year
-    const daysSinceAnchor = Math.floor(
-      (Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()) - EPOCH_GREGORIAN)
-      / MS_PER_DAY
-    );
-
-    // Day within the current 365-day cycle, 0-based
-    const dayOfYear = ((daysSinceAnchor % DAYS_PER_YEAR) + DAYS_PER_YEAR) % DAYS_PER_YEAR;
-
-    const monthIdx = Math.floor(dayOfYear / DAYS_PER_MONTH);
-    const day      = (dayOfYear % DAYS_PER_MONTH) + 1;
-
-    return {
-      year:      date.getFullYear() + YEAR_OFFSET,
-      day:       day,
-      monthName: MONTH_NAMES[monthIdx]
-    };
-  }
-
-  function formatCustom(c) {
-    return `${c.day} ${c.monthName} ${c.year}`;
-  }
-
-  function formatGregorian(d) {
-    return d.toLocaleDateString('en-US', {
-      weekday: 'long',
-      year:    'numeric',
-      month:   'long',
-      day:     'numeric'
-    });
-  }
-
-  const now = new Date();
-  document.getElementById('gregorianDate').textContent = formatGregorian(now);
-  document.getElementById('customDate').textContent    = formatCustom(toCustomCalendar(now));
-
-  // Styled month line: same date, month uppercased, in custom font
-const c = toCustomCalendar(now);
-document.getElementById('customDateScript').innerHTML =
-  `${c.day} <span class="khouzan-month">${c.monthName.toUpperCase()}</span> ${c.year}`;
-
-
-</script>
-
-<script>
-/* random page generator */
-async function randomPage() {
-    try {
-        const res = await fetch('pages.json');
-        const pages = await res.json();
-        const pick = pages[Math.floor(Math.random() * pages.length)];
-        window.location.href = pick;
-    } catch (e) {
-        console.error('Could not load pages.json', e);
+    function toCustomCalendar(date) {
+        const daysSinceAnchor = Math.floor(
+            (Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()) - EPOCH_GREGORIAN) / MS_PER_DAY
+        );
+        const dayOfYear = ((daysSinceAnchor % DAYS_PER_YEAR) + DAYS_PER_YEAR) % DAYS_PER_YEAR;
+        const monthIdx = Math.floor(dayOfYear / DAYS_PER_MONTH);
+        const day      = (dayOfYear % DAYS_PER_MONTH) + 1;
+        return {
+            year: date.getFullYear() + YEAR_OFFSET,
+            day: day,
+            monthName: MONTH_NAMES[monthIdx]
+        };
     }
-}
+
+    function formatCustom(c) {
+        return `${c.day} ${c.monthName} ${c.year}`;
+    }
+
+    function formatGregorian(d) {
+        return d.toLocaleDateString('en-US', {
+            weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+        });
+    }
+
+    const now = new Date();
+    document.getElementById('gregorianDate').textContent = formatGregorian(now);
+    document.getElementById('customDate').textContent    = formatCustom(toCustomCalendar(now));
+
+    const c = toCustomCalendar(now);
+    document.getElementById('customDateScript').innerHTML =
+        `${c.day} <span class="khouzan-month">${c.monthName.toUpperCase()}</span> ${c.year}`;
+
+    /* random page generator */
+    async function randomPage() {
+        try {
+            const res = await fetch('pages.json');
+            const pages = await res.json();
+            const pick = pages[Math.floor(Math.random() * pages.length)];
+            window.location.href = pick;
+        } catch (e) {
+            console.error('Could not load pages.json', e);
+        }
+    }
 </script>
 </body>
 </html>
