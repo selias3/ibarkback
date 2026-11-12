@@ -36,12 +36,27 @@ html {
 } 
 
 /* tables */
+table { 
+	display: flex;
+	flex-direction: column;
+	color: black;
+}
+
+
+table a:visited { 
+	color: grey;
+}
+
 th { 
+	display: flex;
+	flex-direction: column;
 	width: 500px;
 	height: 30px;
 } 
 
 td { 
+	display: flex;
+	flex-direction: column;
 	width: 500px;
 	height: 30px;
 }
@@ -139,16 +154,6 @@ ul,li,ol {
 	margin-left: 20px;
 	margin-right: 20px;
 	padding: 5px;
-}
-
-table { 
-	display: inline-flex;
-	flex-direction: column;
-	color: black;
-}
-
-table a:visited { 
-	color: grey;
 }
 
 .trilogy {
