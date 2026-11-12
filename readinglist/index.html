@@ -39,6 +39,8 @@ html {
 table { 
 	display: flex;
 	flex-direction: column;
+	flex-shrink: 0;
+	align-items: flex-start;
 	color: black;
 	text-align: left;
 }
@@ -145,7 +147,7 @@ ul,li,ol {
     }
 
 .container { 
-	display: inline-flex;
+	display: flex;
 	justify-content: left;
 	flex-direction: row;
 	position: relative;
