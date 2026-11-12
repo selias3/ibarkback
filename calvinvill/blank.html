@@ -99,85 +99,78 @@
         margin-right: 2%;
         margin-bottom: 2%;
         text-align: left;
-        font-size: 10;
+        font-size: 10px;
     }
 
     .contents {
-        /* was: width: 85%; left: 15%; margin-right: 2%; margin-left: 2%; */
-        /* changed width -> right so the box can't overflow the viewport */
         position: absolute;
         left: 15%;
-        right: 2%;
         top: 15%;
+        width: 83%;          /* Fixed width to sit perfectly inside the right margin */
+        margin-left: 2%;     /* Left gutter */
         margin-bottom: 2%;
-        margin-left: 2%;
         margin-top: 0;
         background-color: white;
-        border-left: 1px;
-        border-left-style: solid;
-        border-left-color: #ccc;
-        border-top: 1px;
-        border-top-style: solid;
-        border-top-color: #ccc;
-        flex-direction: column;
+        border-left: 1px solid #ccc;
+        border-top: 1px solid #ccc;
         min-height: 100vh;
-        flex-grow: 1;
+        box-sizing: border-box; /* Ensures borders don't push width past 100% */
         z-index: 1;
-        box-sizing: border-box;
+    }
+
+    /* This clearfix forces .contents to expand full width and wrap around the floated infobox */
+    .contents::after {
+        content: "";
+        display: table;
+        clear: both;
     }
 
     .info { 
         display: flex;
         flex-direction: column;
         position: relative;
-        left: 2%;
-        right: 98%;
-        top: 2%;
-        bottom: 98%;
+        margin: 2%;
         background-color: #D1C4E9;
     }
 
     .awards { 
         display: block;
-        width: 100%;
+        width: auto;          /* Fills the parent naturally instead of overflowing */
         text-align: left;
-        align-items: right;
         background-color: gold;
-        margin: 1%;
-        padding: 1%;
+        margin: 10px;
+        padding: 10px;
+        box-sizing: border-box;
     }
 
     /* infobox */
     .box {
-    width: 300px;
-    float: right;
-    margin-left: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-right: 0;            /* was implicitly 0, made explicit so it hugs the right edge */
-    max-width: 100%;            /* prevents spill on very narrow screens */
-    border: 1px solid #ccc;
-    background: #ffffff;
-    padding: 10px;
-    box-sizing: border-box;
-    margin: 10px 0;             /* original had this; kept it, right/bottom = 0 */
-    z-index: 2;
+        width: 300px;
+        max-width: 90%;       /* Prevents breaking on narrow screens */
+        float: right;
+        margin: 10px;         /* Even margin on all sides */
+        border: 1px solid #ccc;
+        background: #ffffff;
+        padding: 10px;
+        box-sizing: border-box;
+        z-index: 2;
     }
 
     .box h1 {
         text-align: center;
-        font-size:16px;
+        font-size: 16px;
     }
 
     /* h3 should only be used when implementing a background color*/
     .box h3 { 
-    background-color: #D1C4E9;
-    text-align: center;
-    font-size: 14px;
+        background-color: #D1C4E9;
+        text-align: center;
+        font-size: 14px;
     } 
     
     .box img { 
-        border: 1px #ccc;
+        border: 1px solid #ccc;
+        max-width: 100%;
     }
 
     .subcatergories { 
@@ -197,21 +190,21 @@
 
     /* Figure styling */
     .contents > .box img {
-    display: block;
-    max-width: 100%;
-    margin: 0 auto;
+        display: block;
+        max-width: 100%;
+        margin: 0 auto;
     }
 
     .contents > .box figcaption {
-    font-size: 12px;
-    text-align: center;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 12px;
+        text-align: center;
+        font-family: Georgia, 'Times New Roman', Times, serif;
     }
 
     /* style classes (unrelated to containers) */
     .khouzan-month { 
         font-family: 'calvinese';
-        font-size: 10px
+        font-size: 10px;
     }
 
     .subtext {
@@ -318,9 +311,9 @@
         <!--add additional sections here. If held an important position, such as president or leader of something include here-->
             <h3>Suzerain of Calvinvill</h3>		
             <table class="subcatergories">
-                    <th style= text-align:center; colspan="2">In office</th>
+                    <th style="text-align:center;" colspan="2">In office</th>
                     <tr>
-                        <td style= text-align:center; colspan="2">
+                        <td style="text-align:center;" colspan="2">
                             <div>May 1 2000 - April 16 2006</div>
                             <div>47 ahpiar 6334 - 35 ahpiar 6340</div>
                         </td>
@@ -426,3 +419,4 @@ async function randomPage() {
 }
 </script>
 </body>
+</html>
