@@ -256,6 +256,8 @@
     font-style: italic;
     font-size: 10px;
 }
+
+
 </style>
 </head>
 
@@ -408,6 +410,9 @@
     </div>
 </div>
 
+<dialog id="imgViewer" style="border:none; background:transparent; padding:0; max-width:100vw; max-height:100vh;">
+  <img id="viewerImg" src="" alt="" style="max-width:90vw; max-height:90vh; object-fit:contain;">
+</dialog>
 
 
 
@@ -452,7 +457,7 @@
     document.getElementById('customDateScript').innerHTML =
         `${c.day} <span class="khouzan-month">${c.monthName.toUpperCase()}</span> ${c.year}`;
 
-    /* random page generator */
+        /* random page generator */
     async function randomPage() {
         try {
             const res = await fetch('pages.json');
@@ -463,6 +468,23 @@
             console.error('Could not load pages.json', e);
         }
     }
+
+    /* image viewer*/
+document.querySelectorAll('.txtimg img, .titleimage img').forEach(img => {
+    img.style.cursor = 'zoom-in'; // Change cursor to magnifying glass
+    img.addEventListener('click', function(e) {
+        const viewer = document.getElementById('imgViewer');
+        const viewerImg = document.getElementById('viewerImg');
+        viewerImg.src = this.src;      // Pass the image address
+        viewerImg.alt = this.alt;
+        viewer.showModal();            // Open the modal
+    });
+});
+
+// Click the background (dialog itself) to close
+document.getElementById('imgViewer').addEventListener('click', function(e) {
+    if (e.target === this) this.close();
+});
 </script>
 </body>
 </html>
