@@ -87,7 +87,6 @@
         gap: 2%; /* Gap between sidebar and content */
         width: 100%;
         box-sizing: border-box;
-        /* Removed padding-right so .contents reaches the edge */
     }
 
     .Lbox { 
@@ -129,11 +128,30 @@
         width: auto;         
         text-align: left;
         background-color: gold;
-        margin: 10px 0px 10px 10px; /* Adjusted right margin since padding-right handles the edge gap */
+        margin: 10px 0px 10px 10px; 
         padding: 10px;
         box-sizing: border-box;
         z-index: 2;
         position: relative;
+    }
+
+        .star { 
+        height: 50px;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+    }
+
+    .txt { 
+        margin: 10px;
+    }
+
+    h4 {
+        font-size: 18px;
+        font-weight: bold;
+        background-color: #ccc;
+        text-align: left;
+        column-span: 2;
     }
 
     /* infobox */
@@ -146,7 +164,7 @@
         box-sizing: border-box;
         padding: 10px;
         margin: 10px 0px 10px 10px; /* Adjusted right margin to hug the inner padding */
-        z-index: 2;
+        z-index: 3;
     }
 
     .box h1 {
@@ -208,13 +226,6 @@
         font-size: 10px;
         font-style: italic;
         font-family: Georgia, 'Times New Roman', Times, serif;
-    }
-
-    .star { 
-        height: 50px;
-        position: absolute;
-        top: 0px;
-        right: 0px;
     }
 
 </style>
@@ -337,7 +348,29 @@
             </table>
         </div>
     </div>
+    <div class="txt">
+        <p>this is an old background used for testing purposes.  The history of the Kouz Islands and often is representative of broader regional and global historical contexts of the Mediterranean region, North Africa, and Southern Europe. 
+		Geographically, the Kouz islands are primary composed of modern-day nations of <a href="calvinvill.html"> Calvinvill </a> and <a href="khouza.html"> Khouza</a> and a plurality of smaller islands, some of which are disputed  
+		by both nations. Written proof of inhabitance of the islands stretches back to approximately 703 CE (5037 <i><a href="khouzancalendar.html"> Khouzan Calendar (KC)</a></i>), where groups of Berbers from the Mahgreb fled
+		Islam and the Umayyad Caliphate. Many people who currently inhabit the region can trace varrying degrees of their lineage back to these migrant Berbers. Through various encounters 
+		with regional powers throughout the 11th century, the Islands began to become integrated into the regional economy. 
+		
+		
+		. From the 15th century onwards, Portuguese traders had sustained contact with the Berbers of the Islands. 
+		As the industrial revolution swept the world, capital owners began to reshape and mature the regions economy. World War I and II reorientated the regions involvement with Europe, emerging from previous isolationist policy. 
+		This had profound effects on the culture, demographics, religion, and politics of the Kouz Islands, helping shape the dynamics we know today.
+	</p>
+        <h4 id="anchor1">Anchor One</h4>
+            <p> The island now known as <a href="CalvinvillIsland.html">Calvinvill</a> was first inhabited
+		by Berber or Amazigh peoples. The Berbers, indigenous to North Africa, particularly modern-day Morocco, Algeria, and Libya, 
+		originally spread Westward from the Nile. Around 703 CE (5037 KC), as the Umayyad Caliphate and Islam moved Westward, small groups 
+		of Berbers fled into the Mediterranean Sea and discovered the Kouz Islands chain. </p>
+
+    </div>
 </div>
+
+
+
 
 <script>
     /* header date */
