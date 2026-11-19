@@ -3,7 +3,7 @@
 
 <head>
 <meta charset="UTF-8" content="width=device-width, initial-scale=1">
-<title>[page title]</title>
+<title><link rel="icon" type="image/png" href="/calvinvill/images/emblem2.png" />[page title]</title>
 
 <style>
     /* global ops */
@@ -257,7 +257,66 @@
     font-size: 10px;
 }
 
+/* img viewer*/ 
+#imgViewer {
+    border: none;
+    padding: 0;
+    margin: 0;
+    background: black;
+    width: 100vw;
+    height: 100vh;
+    max-width: 100vw;
+    max-height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+#imgViewer:not([open]) {
+    display: none;
+}
+
+#imgViewer figure {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    max-width: 100vw;
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+#viewerImg {
+    max-width: 100vw;
+    max-height: calc(100vh - 50px); /* room for caption */
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+#viewerCaption {
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 14px;
+    font-style: italic;
+    text-align: center;
+    padding: 10px 20px 0;
+    max-width: 90vw;
+    line-height: 1.4;
+}
+
+#viewerCaption:empty {
+    display: none;
+}
+
+#imgViewer::backdrop {
+    background: black;
+}
 </style>
 </head>
 
@@ -410,8 +469,11 @@
     </div>
 </div>
 
-<dialog id="imgViewer" style="border:none; background:transparent; padding:0; max-width:100vw; max-height:100vh;">
-  <img id="viewerImg" src="" alt="" style="max-width:90vw; max-height:90vh; object-fit:contain;">
+<dialog id="imgViewer">
+    <figure>
+        <img id="viewerImg" src="" alt="">
+        <figcaption id="viewerCaption"></figcaption>
+    </figure>
 </dialog>
 
 
@@ -471,18 +533,22 @@
 
     /* image viewer*/
 document.querySelectorAll('.txtimg img, .titleimage img').forEach(img => {
-    img.style.cursor = 'zoom-in'; // Change cursor to magnifying glass
-    img.addEventListener('click', function(e) {
-        const viewer = document.getElementById('imgViewer');
+    img.style.cursor = 'zoom-in';
+    img.addEventListener('click', function () {
+        const viewer    = document.getElementById('imgViewer');
         const viewerImg = document.getElementById('viewerImg');
-        viewerImg.src = this.src;      // Pass the image address
+        const caption   = document.getElementById('viewerCaption');
+
+        viewerImg.src = this.src;
         viewerImg.alt = this.alt;
-        viewer.showModal();            // Open the modal
+        caption.textContent = this.dataset.caption || '';
+
+        viewer.showModal();
     });
 });
 
-// Click the background (dialog itself) to close
-document.getElementById('imgViewer').addEventListener('click', function(e) {
+// Close on backdrop click
+document.getElementById('imgViewer').addEventListener('click', function (e) {
     if (e.target === this) this.close();
 });
 </script>
